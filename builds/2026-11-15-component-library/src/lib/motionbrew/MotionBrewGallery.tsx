@@ -56,8 +56,9 @@ function LivePreview({ item }: { item: MotionEntry }) {
 const categories = ["All", ...new Set(manifest.components.map(c => c.category))];
 const engines = ["All", ...new Set(manifest.components.map(c => c.engine))];
 
-export function MotionBrewGallery() {
-  const [query, setQuery] = useState("");
+export function MotionBrewGallery({initialQuery=""}:{initialQuery?:string}) {
+  const [query, setQuery] = useState(initialQuery);
+  useEffect(()=>{if(initialQuery)setQuery(initialQuery)},[initialQuery]);
   const [category, setCategory] = useState("All");
   const [engine, setEngine] = useState("All");
   const [selected, setSelected] = useState<string|null>(null);
