@@ -5,6 +5,7 @@ on:
       - prototype/personal-component-library
       - feature/pcl-p0-p2-2026-11-15
       - feature/pcl-motionbrew-100-2026-11-15
+      - feature/pcl-p4-release-hardening-2026-11-16
     paths:
       - 'builds/2026-11-15-component-library/**'
       - '.github/workflows/component-library-p0.yml'
@@ -12,6 +13,7 @@ on:
     branches:
       - prototype/personal-component-library
       - feature/pcl-p0-p2-2026-11-15
+      - feature/pcl-gallery-and-reuse-2026-11-16
     paths:
       - 'builds/2026-11-15-component-library/**'
       - '.github/workflows/component-library-p0.yml'
