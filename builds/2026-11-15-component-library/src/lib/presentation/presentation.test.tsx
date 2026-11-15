@@ -1,4 +1,5 @@
 import { test } from "node:test";
+import {readFileSync} from "node:fs";
 import assert from "node:assert/strict";
 import { createElement } from "react";
 import { renderToStaticMarkup } from "react-dom/server";
@@ -27,4 +28,9 @@ test("comparison and roadmap render supplied evidence without hardcoded claims",
 test("workbench provides visible motion and media catalog",()=>{
  const html=renderToStaticMarkup(createElement(PresentationWorkbench));
  assert.match(html,/Media/);assert.match(html,/Word cloud/);
+});
+
+test("media stage defines a single underlying video source, preventing duplicate playback on expand",()=>{
+ const source=readFileSync(new URL("./PresentationWorkbench.tsx",import.meta.url),"utf8");
+ assert.equal((source.match(/<video\\b/g)||[]).length,1);
 });
