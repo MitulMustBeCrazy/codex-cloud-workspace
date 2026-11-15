@@ -2,7 +2,7 @@
 :root{color-scheme:light;--ink:#222829;--muted:#677075;--surface:#f1f1ed;--paper:#fffdfa;--accent:#a06f55;--line:#d7d5cb;--serif:Georgia,"Times New Roman",serif}
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;background:#181e22;font-family:Inter,Arial,Helvetica,sans-serif}button{font:inherit}
 .deck-viewport{min-height:100vh;display:flex;align-items:center;justify-content:center;padding:34px 56px 78px}
-.deck{position:relative;width:min(100%,calc((100vh - 126px)*16/9));aspect-ratio:16/9;background:var(--paper);overflow:hidden;box-shadow:0 20px 78px #0006;color:var(--ink)}
+.deck{position:relative;width:min(100%,160vh);aspect-ratio:16/9;background:var(--paper);overflow:hidden;box-shadow:0 20px 78px #0006;color:var(--ink)}
 .deck [data-slide]{display:none;position:absolute;inset:0;padding:6.5% 7.6%;overflow:hidden;flex-direction:column}
 .deck [data-slide].is-current{display:flex}
 .eyebrow{font-size:clamp(8px,0.91vw,13px);letter-spacing:.17em;text-transform:uppercase;font-weight:700;color:var(--accent)}
@@ -21,10 +21,12 @@
 .tile strong{font-size:clamp(14px,1.9vw,32px);font-weight:600;letter-spacing:-.05em}
 .tile p{font-size:clamp(8px,.9vw,15px);line-height:1.5}.big-quote{font-family:var(--serif);font-style:italic;font-size:clamp(28px,5vw,90px);line-height:1.1;letter-spacing:-.05em;max-width:90%}
 .card-row{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:5%}.metric{padding:7% 5%;border-top:2px solid var(--line);background:var(--surface)}.metric .num{font-size:clamp(30px,4.5vw,79px);line-height:1;letter-spacing:-.08em;font-weight:600;margin:20px 0}.metric p{font-size:clamp(8px,1vw,16px)}
-.bars{height:55%;display:flex;align-items:end;gap:3.8%;border-bottom:1px solid var(--line);padding:0 4%}.bars .bar-group{height:100%;flex:1;display:flex;align-items:end;gap:5px}.bars .bar{width:50%;height:var(--height);background:var(--accent);transform:scaleY(0);transform-origin:bottom;transition:transform 1100ms cubic-bezier(.19,1,.22,1)}.bars .bar.alt{background:var(--muted);opacity:.36}.bars.is-visible .bar{transform:scaleY(1)}
+.bars{height:55%;display:flex;align-items:end;gap:3.8%;border-bottom:1px solid var(--line);padding:0 4%}.bars .bar-group{height:100%;flex:1;display:flex;align-items:end;gap:5px}.bars .bar{width:50%;height:var(--height);background:var(--accent);transform:scaleY(1);transform-origin:bottom;transition:transform 1100ms cubic-bezier(.19,1,.22,1)}
+.deck.is-enhanced .bars:not(.is-visible) .bar{transform:scaleY(0)}.bars .bar.alt{background:var(--muted);opacity:.36}.bars.is-visible .bar{transform:scaleY(1)}
 .graph-labels{display:flex;justify-content:space-around;color:var(--muted);font-size:clamp(8px,.9vw,13px);padding-top:12px}.pill{display:inline-block;padding:8px 13px;border:1px solid var(--line);border-radius:999px;font-size:clamp(8px,.95vw,14px);color:var(--muted)}
-[data-reveal]{opacity:0;transform:translateY(19px);filter:blur(4px);transition:opacity 650ms ease,transform 780ms cubic-bezier(.15,.73,.26,1),filter 650ms ease}
-[data-reveal].is-visible{opacity:1;transform:none;filter:none}
+[data-reveal]{opacity:1;transform:none;filter:none;transition:opacity 650ms ease,transform 780ms cubic-bezier(.15,.73,.26,1),filter 650ms ease}
+.deck.is-enhanced [data-reveal]{opacity:0;transform:translateY(19px);filter:blur(4px)}
+.deck.is-enhanced [data-reveal].is-visible{opacity:1;transform:none;filter:none}
 .deck-controls{position:fixed;left:50%;bottom:15px;transform:translateX(-50%);display:flex;align-items:center;gap:14px;padding:9px 11px;border-radius:12px;background:#12191deF;border:1px solid #ffffff30;color:#e9eeee;box-shadow:0 8px 24px #0004;z-index:10}
 .deck-controls button{border:1px solid #ffffff33;background:transparent;color:inherit;border-radius:7px;min-width:37px;min-height:35px;padding:7px 11px;cursor:pointer}.deck-controls button:hover,.deck-controls button:focus-visible{background:#ffffff24;outline:2px solid #95bcc4;outline-offset:2px}
 .deck-controls .count{font-size:12px;white-space:nowrap;min-width:70px;text-align:center;font-variant-numeric:tabular-nums}
