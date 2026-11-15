@@ -74,17 +74,17 @@ function Overview({navigate}: {navigate:(page:SectionId)=>void}){
   <section className="qc-collection-feature" aria-labelledby="qc-pickup-title">
     <div className="qc-section-line"><div><EyeLabel>YOUR WORKSPACE</EyeLabel><h2 id="qc-pickup-title">Pick up where you left off.</h2></div><TextAction onClick={()=>navigate("motionbrew")}>See all motion</TextAction></div>
     <div className="qc-feature-grid">
-      <button className="qc-feature-tile qc-feature-motion" onClick={()=>navigate("motionbrew")} aria-label="Browse 100 MotionBrew components">
+      <button className="qc-feature-tile qc-feature-motion" onClick={()=>navigate("motionbrew")}>
         <div className="qc-tile-head"><span>01 / INTERACTION</span><ArrowUpRight size={18}/></div>
         <div className="qc-feature-motion-art" aria-hidden="true"><i/><i/><i/><i/></div>
         <div className="qc-tile-bottom"><h3>MotionBrew <span>100</span></h3><p>Microinteractions, advanced motion, spatial UI.</p></div>
       </button>
-      <button className="qc-feature-tile qc-feature-decks" onClick={()=>navigate("decks")} aria-label="Browse ten HTML presentation decks">
+      <button className="qc-feature-tile qc-feature-decks" onClick={()=>navigate("decks")}>
         <div className="qc-tile-head"><span>02 / STORYTELLING</span><ArrowUpRight size={18}/></div>
         <div className="qc-feature-deck-art" aria-hidden="true"><span>01 / THE IDEA</span><strong>Go beyond<br/><em>the expected.</em></strong><i/></div>
         <div className="qc-tile-bottom"><h3>Web deck library <span>10</span></h3><p>Editable HTML stories, reveal pacing and media.</p></div>
       </button>
-      <button className="qc-feature-tile qc-feature-workflows" onClick={()=>navigate("brandaily")} aria-label="Explore Brandaily workflow components">
+      <button className="qc-feature-tile qc-feature-workflows" onClick={()=>navigate("brandaily")}>
         <div className="qc-tile-head"><span>03 / WORKFLOWS</span><ArrowUpRight size={18}/></div>
         <div className="qc-feature-work-art" aria-hidden="true"><div><span>Today’s focus</span><b>4 priorities</b></div><div><span className="qc-faux-check">✓</span> Review campaign rollout</div><div><span className="qc-faux-ring"/> Approve creative direction</div><div><span className="qc-faux-ring"/> Align launch calendar</div></div>
         <div className="qc-tile-bottom"><h3>Brandaily UI <span>P0–P2</span></h3><p>Tasks, approvals, communications and analytics.</p></div>
@@ -264,9 +264,9 @@ function QuietCanvasPortal(){
  };
  useEffect(()=>{const pop=()=>setSection(readSection());window.addEventListener("popstate",pop);return()=>window.removeEventListener("popstate",pop)},[]);
  useEffect(()=>{const shortcut=(e:KeyboardEvent)=>{
-   if((e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();setSearchOpen(v=>!v)}
+   if(section!=="lab"&&(e.metaKey||e.ctrlKey)&&e.key.toLowerCase()==="k"){e.preventDefault();setSearchOpen(v=>!v)}
    else if(e.key==="/"&&!/INPUT|TEXTAREA/.test((e.target as HTMLElement)?.tagName||"")&&!appearanceOpen&&!searchOpen){e.preventDefault();setSearchOpen(true)}
-  };document.addEventListener("keydown",shortcut);return()=>document.removeEventListener("keydown",shortcut)},[appearanceOpen,searchOpen]);
+  };document.addEventListener("keydown",shortcut);return()=>document.removeEventListener("keydown",shortcut)},[appearanceOpen,searchOpen,section]);
  const toggleSaved=(id:string)=>setSaved(list=>list.includes(id)?list.filter(v=>v!==id):[...list,id]);
  const pickSearch=(entry:SearchEntry)=>{
   if(entry.kind==="MotionBrew"){setMotionSearch(entry.name.replace(/^MotionBrew /,"").trim());navigate("motionbrew")}
