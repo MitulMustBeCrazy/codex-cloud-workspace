@@ -50,6 +50,7 @@ test("ten gallery templates open self-contained HTML presentations",async({page}
 test("small viewport avoids horizontal page overflow and preserves slide navigation",async({page})=>{
  await page.setViewportSize({width:390,height:844});
  await page.goto("/");
+ await page.getByRole("button",{name:"Open navigation"}).click();
  await page.getByRole("button",{name:"Brandaily P0"}).click();
  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
  expect(overflow).toBeLessThanOrEqual(3);
