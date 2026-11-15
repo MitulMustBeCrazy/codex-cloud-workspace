@@ -6,7 +6,7 @@ test("MotionBrew catalog lists all 100 components and supports filtered live pre
   await expect(page.locator(".mb-component-card")).toHaveCount(100);
   await page.getByRole("searchbox",{name:"Search components"}).fill("blur-text");
   await expect(page.locator(".mb-component-card")).toHaveCount(1);
-  await page.getByRole("button",{name:/Inspect Blur Text/}).click();
+  await page.locator(".mb-component-card__main").click();
   await expect(page.getByRole("dialog",{name:"Inspect BlurText"})).toBeVisible();
   await page.getByRole("button",{name:"Load live component"}).click();
   await expect(page.getByText("Better experiences, built with intent.")).toBeVisible();
