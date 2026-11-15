@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useRef, useState } from "react";
+import { useEffect, useId, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { layoutWords, motionSequence } from "../system/visual-logic.js";
 import { mediaCoordinator } from "../system/media-coordinator.js";
@@ -25,68 +25,62 @@ export function MediaStage({kind,src,poster,overlaySrc,alt="",label="Media previ
  kind:MediaKind;src:string;poster?:string;overlaySrc?:string;alt?:string;label?:string;allowFullscreen?:boolean;
 }){
  const [expanded,setExpanded]=useState(false),[playing,setPlaying]=useState(false),[time,setTime]=useState(0),[duration,setDuration]=useState(0);
- const mediaRef=useRef<HTMLMediaElement|null>(null),triggerRef=useRef<HTMLButtonElement|null>(null);
- const id=useRef("media-"+Math.random().toString(36).slice(2));
+ const mediaRef=useRef<HTMLMediaElement|null>(null),triggerRef=useRef<HTMLButtonElement|null>(null),playButtonRef=useRef<HTMLButtonElement|null>(null);
+ const id=useId();
  const video=kind==="video",audio=kind==="audio";
  useEffect(()=>{
-   const unregister=mediaCoordinator.register(id.current,()=>{mediaRef.current?.pause();setPlaying(false)});
+   const unregister=mediaCoordinator.register(id,()=>{mediaRef.current?.pause();setPlaying(false)});
    return ()=>{unregister();mediaRef.current?.pause()};
- },[]);
+ },[id]);
  useEffect(()=>{if(!expanded)return;
    const key=(event:KeyboardEvent)=>{if(event.key==="Escape"){event.preventDefault();close()}};
    document.addEventListener("keydown",key);
    const old=document.body.style.overflow;document.body.style.overflow="hidden";
    return ()=>{document.removeEventListener("keydown",key);document.body.style.overflow=old};
  },[expanded]);
- const pause=()=>{mediaRef.current?.pause();mediaCoordinator.deactivate(id.current);setPlaying(false)};
- const close=()=>{pause();setExpanded(false);window.requestAnimationFrame(()=>triggerRef.current?.focus())};
+ const pause=()=>{mediaRef.current?.pause();mediaCoordinator.deactivate(id);setPlaying(false)};
+ const close=()=>{pause();setExpanded(false);window.requestAnimationFrame(()=>(playButtonRef.current||triggerRef.current)?.focus())};
  const play=async()=>{
    if(kind==="image"){setExpanded(true);return}
    if(!mediaRef.current)return;
-   mediaCoordinator.activate(id.current);
+   mediaCoordinator.activate(id);
    try{
      await mediaRef.current.play();
      setPlaying(true);
      if(video&&allowFullscreen)setExpanded(true);
-   }catch{setPlaying(false);mediaCoordinator.deactivate(id.current)}
+   }catch{setPlaying(false);mediaCoordinator.deactivate(id)}
  };
  const toggle=()=>playing?close():play();
  const seek=(value:number)=>{if(mediaRef.current&&Number.isFinite(duration)&&duration>0){
    mediaRef.current.currentTime=Math.max(0,Math.min(duration,value));setTime(mediaRef.current.currentTime);
  }};
  const timeline=(kind==="audio"||expanded&&kind==="video")&&<div className="pcl-media__timeline" onClick={event=>event.stopPropagation()}>
-    <label htmlFor={"pcl-media-seek-"+id.current}>Seek {label}</label>
-    <input id={"pcl-media-seek-"+id.current} type="range" min={0} max={Number.isFinite(duration)&&duration>0?duration:1} step=".1"
+    <label htmlFor={"pcl-media-seek-"+id}>Seek {label}</label>
+    <input id={"pcl-media-seek-"+id} type="range" min={0} max={Number.isFinite(duration)&&duration>0?duration:1} step=".1"
       value={Math.min(time,Number.isFinite(duration)&&duration>0?duration:1)} onChange={event=>seek(Number(event.target.value))} aria-label={"Seek "+label}/>
     <small>{Math.floor(time/60)}:{String(Math.floor(time%60)).padStart(2,"0")} / {Number.isFinite(duration)?Math.floor(duration/60):0}:{String(Number.isFinite(duration)?Math.floor(duration%60):0).padStart(2,"0")}</small>
    </div>;
  const controls=(audio||video)&&<div className="pcl-media__controls">
-   <button type="button" aria-label={playing?"Pause "+label:"Play "+label} onClick={event=>{event.stopPropagation();toggle()}}>{playing?"Pause":"Play"}</button>
+   <button ref={playButtonRef} type="button" aria-label={playing?"Pause "+label:"Play "+label} onClick={event=>{event.stopPropagation();toggle()}}>{playing?"Pause":"Play"}</button>
    {timeline}
  </div>;
  const media=(video?<video ref={element=>{mediaRef.current=element}} src={src} poster={poster} preload="metadata"
-   playsInline controls={expanded} onPlay={()=>{mediaCoordinator.activate(id.current);setPlaying(true)}} onPause={()=>{setPlaying(false);mediaCoordinator.deactivate(id.current)}}
-   onEnded={()=>{setPlaying(false);mediaCoordinator.deactivate(id.current);setExpanded(false)}}
+   playsInline onClick={()=>{if(expanded)close()}} onPlay={()=>{mediaCoordinator.activate(id);setPlaying(true)}} onPause={()=>{setPlaying(false);mediaCoordinator.deactivate(id)}}
+   onEnded={()=>{setPlaying(false);mediaCoordinator.deactivate(id);setExpanded(false)}}
    onTimeUpdate={e=>setTime(e.currentTarget.currentTime)} onLoadedMetadata={e=>setDuration(e.currentTarget.duration)}/>
    :audio?<audio ref={element=>{mediaRef.current=element}} src={src} preload="metadata" onTimeUpdate={e=>setTime(e.currentTarget.currentTime)}
-     onLoadedMetadata={e=>setDuration(e.currentTarget.duration)} onPlay={()=>{mediaCoordinator.activate(id.current);setPlaying(true)}}
-     onPause={()=>{setPlaying(false);mediaCoordinator.deactivate(id.current)}} onEnded={()=>{setPlaying(false);mediaCoordinator.deactivate(id.current)}}/>
+     onLoadedMetadata={e=>setDuration(e.currentTarget.duration)} onPlay={()=>{mediaCoordinator.activate(id);setPlaying(true)}}
+     onPause={()=>{setPlaying(false);mediaCoordinator.deactivate(id)}} onEnded={()=>{setPlaying(false);mediaCoordinator.deactivate(id)}}/>
    :<img src={src} alt={alt}/>);
  const artwork=(audio&&overlaySrc)?<img src={overlaySrc} alt={alt||"Audio cover artwork"} className="pcl-media__artwork"/>:null;
  return <div className={"pcl-media"+(expanded?" is-expanded":"")} data-kind={kind}>
    {kind==="image"?<button ref={triggerRef} className="pcl-media__image" onClick={()=>setExpanded(true)} aria-label={"Expand "+label}>
      <img src={src} alt={alt}/><span>Expand image</span></button>:<div className="pcl-media__surface">{artwork}{media}{controls}</div>}
-   {expanded&&<div className="pcl-media__backdrop" role="presentation" onClick={close}>
+   {video&&expanded&&<button className="pcl-media__video-close" type="button" onClick={close} aria-label="Pause video and return to deck">Close video</button>}
+   {kind==="image"&&expanded&&<div className="pcl-media__backdrop" role="presentation" onClick={close}>
      <div className="pcl-media__dialog" role="dialog" aria-modal="true" aria-label={label} onClick={event=>event.stopPropagation()}>
        <button className="pcl-media__close" type="button" onClick={close} aria-label="Close media">Close</button>
-       {kind==="image"?<img src={src} alt={alt}/>:<div className="pcl-media__expanded-media" onClick={close} role="presentation">
-         <video ref={element=>{if(expanded)mediaRef.current=element}} src={src} poster={poster} autoPlay playsInline
-          onPlay={()=>{mediaCoordinator.activate(id.current);setPlaying(true)}} onPause={()=>{setPlaying(false);mediaCoordinator.deactivate(id.current)}}
-          onEnded={close} onTimeUpdate={e=>setTime(e.currentTarget.currentTime)} onLoadedMetadata={e=>setDuration(e.currentTarget.duration)}
-         />
-         <span>Tap to pause and return</span>
-       </div>}
-       {video&&timeline}
+       <img src={src} alt={alt}/>
      </div>
    </div>}
  </div>;
