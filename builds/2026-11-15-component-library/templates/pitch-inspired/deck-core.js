@@ -4,6 +4,7 @@
   const deck = document.querySelector("[data-deck]");
   if (!deck) return;
   const slides = Array.from(deck.querySelectorAll("[data-slide]"));
+  deck.classList.add("is-enhanced");
   const prevButton = document.querySelector("[data-prev]");
   const nextButton = document.querySelector("[data-next]");
   const autoButton = document.querySelector("[data-auto]");
@@ -11,7 +12,7 @@
   const progress = document.querySelector("[data-progress]");
   const reduced = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   const paceMs = Math.max(500, Number(deck.dataset.pace || 1800));
-  let slideIndex = 0, revealIndex = 0, autoTimer = null;
+  let slideIndex = 0, revealIndex = 1, autoTimer = null;
   function revealables(slide) { return Array.from(slide.querySelectorAll("[data-reveal]")); }
   function update() {
     slides.forEach((slide, i) => {
