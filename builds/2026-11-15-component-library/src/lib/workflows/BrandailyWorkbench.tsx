@@ -69,7 +69,7 @@ export function CalendarPanel({view="Month",date="2026-11-15",events=[],onViewCh
   view?:CalendarPeriod;date?:string;events?:CalendarEvent[];onViewChange?:(v:CalendarPeriod)=>void;
   onDateChange?:(d:string)=>void;onEventClick?:(id:string)=>void;
 }){
-  const lookup=(day:string)=>events.filter(e=>e.date<=day&&(!e.endDate||e.endDate>=day));
+  const lookup=(day:string)=>events.filter(e=>e.date<=day&&(e.endDate?e.endDate>=day:e.date===day));
   const cells=view==="Year"?calendarYear(date):view==="Quarter"?calendarQuarter(date):view==="Month"?calendarMonth(date):view==="Week"?calendarWeek(date):calendarDay(date);
   const title=view==="Year"?date.slice(0,4):view==="Quarter"?"Q"+(Math.floor((Number(date.slice(5,7))-1)/3)+1)+" "+date.slice(0,4):fmt(date,{month:"long",year:"numeric"});
   return <section className="pcl-calendar" aria-label={"Calendar - "+view+" view"}>
