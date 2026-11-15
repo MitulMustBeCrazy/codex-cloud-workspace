@@ -4,6 +4,7 @@ on:
     branches:
       - prototype/personal-component-library
       - feature/pcl-p0-p2-2026-11-15
+      - feature/pcl-motionbrew-100-2026-11-15
     paths:
       - 'builds/2026-11-15-component-library/**'
       - '.github/workflows/component-library-p0.yml'
@@ -35,6 +36,11 @@ jobs:
         run: npm run build
       - name: Execute unit and source tests
         run: npm test
+      - name: Verify MotionBrew all-source registry output
+        run: |
+          test -f public/r/motionbrew-blur-text.json
+          test -f public/r/motionbrew-globe-card.json
+          test -f public/r/motionbrew-wave-text.json
       - name: Verify generated decks
         run: |
           test -f public/decks/pitch-inspired/sonic-launch.html
