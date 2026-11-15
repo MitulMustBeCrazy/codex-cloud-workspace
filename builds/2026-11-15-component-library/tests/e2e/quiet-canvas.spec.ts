@@ -97,3 +97,46 @@ test("Quiet Canvas overview and appearance dialog have no serious or critical ax
    expect(severe.map(v=>({id:v.id,targets:v.nodes.map(x=>x.target)}))).toEqual([]);
  }
 });
+
+
+test("P4 built release serves real versioned assets instead of SPA fallback",async({request})=>{
+ const release=await request.get("/release-manifest.json");
+ expect(release.status()).toBe(200);
+ expect(release.headers()["content-type"]).toMatch(/json/);
+ const status=await release.json();
+ expect(status.schemaVersion).toBe(1);
+ expect(status.inventory.registryEntries).toBe(110);
+ expect(status.inventory.motionbrewEntries).toBe(100);
+ expect(status.inventory.htmlDecks).toBe(10);
+ expect(status.checks.valid).toBe(true);
+ expect(status.checks.requiredRoutes).toBe(124);
+ expect(status.readiness["consumer-verified"]).toBe(0);
+ for(const name of ["motionbrew-blur-text","motionbrew-wave-text","pcl-brandaily-workflows"]){
+   const r=await request.get("/r/"+name+".json");
+   expect(r.status()).toBe(200);
+   const obj=await r.json();
+   expect(obj.name).toBe(name);
+   expect(obj.files.length).toBeGreaterThan(0);
+ }
+ for(const id of ["editorial","board-report","sonic-launch"]){
+   const r=await request.get("/decks/pitch-inspired/"+id+".html");
+   expect(r.status()).toBe(200);
+   expect(await r.text()).toContain("data-slide");
+ }
+ for(const id of ["dashboard","deck"]){
+   const r=await request.get("/consumers/"+id+"/index.html");
+   expect(r.status()).toBe(200);
+   expect(await r.text()).toContain('id="app"');
+ }
+});
+
+test("P4 page has no horizontal overflow at 320, 390, 768 and 1440 with reduced motion",async({page})=>{
+ await page.emulateMedia({reducedMotion:"reduce"});
+ for(const width of [320,390,768,1440]){
+  await page.setViewportSize({width,height:844});
+  await page.goto("/?view=motionbrew");
+  await expect(page.locator(".mb-component-card")).toHaveCount(100);
+  const overflow=await page.evaluate(()=>document.documentElement.scrollWidth-window.innerWidth);
+  expect(overflow, "overflow at "+width).toBeLessThanOrEqual(3);
+ }
+});
