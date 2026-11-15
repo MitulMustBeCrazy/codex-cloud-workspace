@@ -1,0 +1,196 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "personal-component-library",
+  "homepage": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace",
+  "items": [
+    {
+      "name": "pcl-workflow-logic",
+      "title": "Calendar, mentions and workflow logic",
+      "description": "Pure date-safe calendar, mention and data logic, independent of React.",
+      "type": "registry:lib",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/system/workflow-logic.js",
+          "type": "registry:lib",
+          "target": "src/lib/system/workflow-logic.js"
+        }
+      ]
+    },
+    {
+      "name": "pcl-visual-logic",
+      "title": "Word clouds and motion logic",
+      "description": "Deterministic nonoverlap word cloud placement and named motion profiles.",
+      "type": "registry:lib",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/system/visual-logic.js",
+          "type": "registry:lib",
+          "target": "src/lib/system/visual-logic.js"
+        }
+      ]
+    },
+    {
+      "name": "pcl-media-coordinator",
+      "title": "Single-active-media coordinator",
+      "description": "Independent coordination of multiple HTML audio/video players.",
+      "type": "registry:lib",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/system/media-coordinator.js",
+          "type": "registry:lib",
+          "target": "src/lib/system/media-coordinator.js"
+        }
+      ]
+    },
+    {
+      "name": "pcl-today-task-card",
+      "title": "Today task card",
+      "description": "Reusable task completion, delegation and promotion controls with external callbacks.",
+      "type": "registry:component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/p0/TodayTaskCard.tsx",
+          "type": "registry:component",
+          "target": "src/lib/p0/TodayTaskCard.tsx"
+        },
+        {
+          "path": "src/lib/p0/p0.css",
+          "type": "registry:component",
+          "target": "src/lib/p0/p0.css"
+        }
+      ]
+    },
+    {
+      "name": "pcl-kpi-card",
+      "title": "KPI and progress",
+      "description": "Locale-aware metrics and accessible target progress meter.",
+      "type": "registry:component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/p0/MetricCard.tsx",
+          "type": "registry:component",
+          "target": "src/lib/p0/MetricCard.tsx"
+        },
+        {
+          "path": "src/lib/p0/p0.css",
+          "type": "registry:component",
+          "target": "src/lib/p0/p0.css"
+        }
+      ]
+    },
+    {
+      "name": "pcl-brandaily-workflows",
+      "title": "Brandaily workflow components",
+      "description": "Five-view calendar, inline tagging, campaign approvals, communications and data table.",
+      "type": "registry:block",
+      "registryDependencies": [
+        "pcl-workflow-logic",
+        "pcl-today-task-card",
+        "pcl-kpi-card"
+      ],
+      "files": [
+        {
+          "path": "src/lib/workflows/BrandailyWorkbench.tsx",
+          "type": "registry:component",
+          "target": "src/lib/workflows/BrandailyWorkbench.tsx"
+        },
+        {
+          "path": "src/lib/workflows/brandaily.css",
+          "type": "registry:component",
+          "target": "src/lib/workflows/brandaily.css"
+        }
+      ]
+    },
+    {
+      "name": "pcl-deck-presentation",
+      "title": "Web deck components",
+      "description": "Slide-safe 16:9 frames, media, word clouds, comparisons, roadmap and reveals.",
+      "type": "registry:block",
+      "registryDependencies": [
+        "pcl-visual-logic",
+        "pcl-media-coordinator"
+      ],
+      "files": [
+        {
+          "path": "src/lib/presentation/PresentationWorkbench.tsx",
+          "type": "registry:component",
+          "target": "src/lib/presentation/PresentationWorkbench.tsx"
+        },
+        {
+          "path": "src/lib/presentation/presentation.css",
+          "type": "registry:component",
+          "target": "src/lib/presentation/presentation.css"
+        }
+      ]
+    },
+    {
+      "name": "pcl-advanced-studio",
+      "title": "P1 and P2 advanced components",
+      "description": "Command palette, saved filters, notifications, visual effects and advanced analytics.",
+      "type": "registry:block",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/advanced/AdvancedWorkbench.tsx",
+          "type": "registry:component",
+          "target": "src/lib/advanced/AdvancedWorkbench.tsx"
+        },
+        {
+          "path": "src/lib/advanced/advanced.css",
+          "type": "registry:component",
+          "target": "src/lib/advanced/advanced.css"
+        }
+      ]
+    },
+    {
+      "name": "pcl-html-deck-core",
+      "title": "Standalone HTML deck engine",
+      "description": "Shared keyboard, timed reveal, responsive and reduced-motion CSS/JS engine.",
+      "type": "registry:block",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "templates/pitch-inspired/deck-core.css",
+          "type": "registry:component",
+          "target": "templates/pitch-inspired/deck-core.css"
+        },
+        {
+          "path": "templates/pitch-inspired/deck-core.js",
+          "type": "registry:lib",
+          "target": "templates/pitch-inspired/deck-core.js"
+        }
+      ]
+    },
+    {
+      "name": "pcl-html-deck-examples",
+      "title": "Original HTML deck examples",
+      "description": "Editable Pitch-inspired HTML deck narratives with additional animated reveals.",
+      "type": "registry:block",
+      "registryDependencies": [
+        "pcl-html-deck-core"
+      ],
+      "files": [
+        {
+          "path": "templates/pitch-inspired/editorial.html",
+          "type": "registry:component",
+          "target": "templates/pitch-inspired/editorial.html"
+        },
+        {
+          "path": "templates/pitch-inspired/board-report.html",
+          "type": "registry:component",
+          "target": "templates/pitch-inspired/board-report.html"
+        },
+        {
+          "path": "templates/pitch-inspired/kpi-report.html",
+          "type": "registry:component",
+          "target": "templates/pitch-inspired/kpi-report.html"
+        }
+      ]
+    }
+  ]
+}
