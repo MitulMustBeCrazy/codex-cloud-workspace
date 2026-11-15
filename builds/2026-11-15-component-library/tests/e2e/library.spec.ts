@@ -68,3 +68,20 @@ test("critical and serious automated accessibility issues are absent on Brandail
  const material=results.violations.filter(v=>v.impact==="critical"||v.impact==="serious");
  expect(material.map(v=>({id:v.id,impact:v.impact,nodes:v.nodes.map(n=>n.target)}))).toEqual([]);
 });
+
+test("brand dashboard currency is legible without missing-glyph fallback",async({page})=>{
+ await page.goto("/");
+ await page.getByRole("button",{name:"Brandaily P0"}).click();
+ await expect(page.getByText(/BDT 415\.5/)).toBeVisible();
+});
+test("command palette and template gallery have no serious or critical axe violations",async({page})=>{
+ await page.goto("/");
+ await page.getByRole("button",{name:"P1 + P2 Lab"}).click();
+ await page.getByRole("button",{name:/Open command palette/}).click();
+ let results=await new AxeBuilder({page}).analyze();
+ expect(results.violations.filter(v=>["critical","serious"].includes(v.impact||"")).map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))).toEqual([]);
+ await page.getByRole("button",{name:"Close command palette"}).click();
+ await page.getByRole("button",{name:"HTML deck gallery"}).click();
+ results=await new AxeBuilder({page}).analyze();
+ expect(results.violations.filter(v=>["critical","serious"].includes(v.impact||"")).map(v=>({id:v.id,nodes:v.nodes.map(n=>n.target)}))).toEqual([]);
+});
