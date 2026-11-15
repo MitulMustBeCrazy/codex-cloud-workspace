@@ -11,7 +11,7 @@ export function createMediaCoordinator() {
     },
     activate(id) {
       if(!players.has(id))return false;
-      for(const [other,handler] of players)if(other!==id)handler.pause();
+      if(current && current!==id)players.get(current)?.pause();
       current=id;return true;
     },
     deactivate(id) {if(current===id)current=null;},
