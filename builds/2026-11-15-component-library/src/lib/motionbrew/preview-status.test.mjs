@@ -16,10 +16,11 @@ test("catalog covers exactly 100 MotionBrew source components and preserves prov
  assert.equal(new Set(catalog.components.map(x=>x.slug)).size,100);
  assert.deepEqual(catalog.components.map(x=>x.slug).sort(),manifest.components.map(x=>x.slug).sort());
 });
-test("catalog does not imply unverified source is a working preview",()=>{
+test("catalog records all 100 provider-default preview fixtures without claiming interaction or consumer certification",()=>{
  for(const entry of catalog.components){
-  assert.equal(entry.status,"source-only");
-  assert.equal(entry.fixture,null);
+  assert.equal(entry.status,"fixture-ready");
+  assert.equal(entry.fixture,"provider-defaults");
+  assert.ok(entry.mountEvidence?.includes("github.com/MitulMustBeCrazy/"));
   assert.ok(entry.notes.length>8);
   assert.ok(["low","medium","high","unknown"].includes(entry.motionCost));
   assert.ok(Array.isArray(entry.needs));
