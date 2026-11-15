@@ -32,5 +32,5 @@ test("workbench provides visible motion and media catalog",()=>{
 
 test("media stage defines a single underlying video source, preventing duplicate playback on expand",()=>{
  const source=readFileSync(new URL("./PresentationWorkbench.tsx",import.meta.url),"utf8");
- assert.equal((source.match(/<video\\b/g)||[]).length,1);
+ assert.equal(source.split("<video ").length-1,1);
 });
