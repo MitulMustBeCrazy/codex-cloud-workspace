@@ -1,6 +1,6 @@
 import { useMemo, useRef, useState } from "react";
 import type { KeyboardEvent as ReactKeyboardEvent, ChangeEvent } from "react";
-import { calendarDay, calendarWeek, calendarMonth, calendarQuarter, calendarYear, shiftCalendar, findMentionQuery, insertMention, filterAndSort, summarizeCampaigns } from "../system/workflow-logic.js";
+import { calendarDay, calendarWeek, calendarMonth, calendarQuarter, calendarYear, shiftCalendar, findMentionQuery, insertMention, reconcileMentionReferences, filterAndSort, summarizeCampaigns } from "../system/workflow-logic.js";
 import { TodayTaskCard } from "../p0/TodayTaskCard";
 import type { TodayTask, PromotionTarget } from "../p0/TodayTaskCard";
 import { P0MetricCard } from "../p0/MetricCard";
@@ -24,14 +24,14 @@ export function InlineMentionsComposer({value,onChange,entities,placeholder="Wri
   const update=(ev:ChangeEvent<HTMLTextAreaElement>)=>{
     const text=ev.currentTarget.value;
     // Retain only exact spans. A consumer may persist references and reconcile server-side.
-    const references=value.references.filter(ref=>text.slice(ref.start,ref.end)===ref.display);
+    const references=reconcileMentionReferences(value.text,text,value.references);
     onChange({text,references});
     setCaret(ev.currentTarget.selectionStart);setActiveIndex(0);setDismissed(false);
   };
   const select=(entity:MentionEntity)=>{
     if(!range)return;
     const selection=insertMention(value.text,range,entity);
-    const references=value.references.filter(ref=>ref.end<=range.start||ref.start>=range.end)
+    const references=reconcileMentionReferences(value.text,selection.text,value.references)
       .concat(selection.reference).sort((a,b)=>a.start-b.start);
     onChange({text:selection.text,references});
     setCaret(selection.cursor);setDismissed(true);
