@@ -1,6 +1,5 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import type { KeyboardEvent as ReactKeyboardEvent } from "react";
-import "./advanced.css";
 
 export type CommandItem={id:string;label:string;group?:string;shortcut?:string;onSelect:()=>void};
 export function CommandPalette({open,commands,onClose,title="Command palette"}:{
