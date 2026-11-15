@@ -1,4 +1,4 @@
-name: Component Library P0-P2 QA
+name: Component Library P0-P4 QA
 on:
   push:
     branches:
@@ -37,6 +37,8 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Build and typecheck
         run: npm run build
+      - name: Verify packaged P4 release assets and provenance
+        run: npm run test:release
       - name: Execute unit and source tests
         run: npm test
       - name: Verify independent dashboard and presentation consumer bundles
