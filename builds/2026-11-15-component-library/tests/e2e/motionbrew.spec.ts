@@ -33,3 +33,24 @@ test("MotionBrew catalog passes severe automated accessibility audit",async({pag
   const severe=results.violations.filter(v=>v.impact==="critical"||v.impact==="serious");
   expect(severe.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)}))).toEqual([]);
 });
+
+test("all 100 MotionBrew cards display honest source readiness and allow status filtering",async({page})=>{
+  await page.goto("/?view=motionbrew");
+  await expect(page.locator(".mb-component-card")).toHaveCount(100);
+  await expect(page.locator(".mb-component-card__status")).toHaveCount(100);
+  await expect(page.locator(".mb-component-card__status").first()).toHaveText("Source imported");
+  await page.getByLabel("Preview readiness").selectOption("source-only");
+  await expect(page.locator(".mb-component-card")).toHaveCount(100);
+  await page.getByLabel("Preview readiness").selectOption("demo-verified");
+  await expect(page.locator(".mb-component-card")).toHaveCount(0);
+  await page.getByLabel("Preview readiness").selectOption("All");
+  await expect(page.locator(".mb-component-card")).toHaveCount(100);
+});
+test("source-only inspector does not claim verified preview and keeps source action",async({page})=>{
+  await page.goto("/?view=motionbrew");
+  await page.getByRole("searchbox",{name:"Search components"}).fill("pill-tabs");
+  await page.locator(".mb-component-card__main").click();
+  await expect(page.getByRole("dialog",{name:"Inspect PillTabs"})).toContainText("Source imported");
+  await expect(page.getByRole("link",{name:"View imported source"})).toHaveAttribute("href",/pill-tabs\.tsx$/);
+  await expect(page.getByRole("button",{name:"Load live component"})).toBeVisible();
+});
