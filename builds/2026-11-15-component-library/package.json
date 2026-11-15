@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test": "node --test src/lib/p0/p0.test.cjs templates/pitch-inspired/deck-core.test.cjs",
+    "test": "node --test src/lib/p0/p0.test.cjs templates/pitch-inspired/deck-core.test.cjs src/lib/system/*.test.mjs && node --import tsx --test src/lib/workflows/brandaily.test.tsx",
     "sync:decks": "node scripts/sync-decks.mjs",
     "predev": "npm run sync:decks",
     "prebuild": "npm run sync:decks"
@@ -21,6 +21,7 @@
     "@types/react-dom": "^19.2.0",
     "@vitejs/plugin-react": "^5.0.0",
     "typescript": "~5.9.0",
-    "vite": "^7.0.0"
+    "vite": "^7.0.0",
+    "tsx": "^4.20.0"
   }
 }
