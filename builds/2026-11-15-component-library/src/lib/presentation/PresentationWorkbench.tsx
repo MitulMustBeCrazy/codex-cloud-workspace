@@ -2,7 +2,6 @@ import { useEffect, useMemo, useRef, useState } from "react";
 import type { ReactNode } from "react";
 import { layoutWords, motionSequence } from "../system/visual-logic.js";
 import { mediaCoordinator } from "../system/media-coordinator.js";
-import "./presentation.css";
 
 export type MotionProfile="quiet"|"living"|"impact"|"media";
 export function SlideFrame({label,children,theme="editorial",className=""}:{
