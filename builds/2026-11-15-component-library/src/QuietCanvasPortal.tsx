@@ -1,6 +1,6 @@
 import {useEffect,useMemo,useRef,useState} from "react";
 import type {ReactNode} from "react";
-import {ArrowRight,ArrowUpRight,BookOpen,Check,ChevronDown,ChevronRight,Command,Copy,ExternalLink,FileText,FolderOpen,Grid2X2,Layers3,Menu,Moon,Palette,Search,Settings2,Shapes,SlidersHorizontal,Sun,Waveform,X} from "lucide-react";
+import {ArrowRight,ArrowUpRight,BookOpen,Check,ChevronDown,ChevronRight,Copy,FileText,FolderOpen,Grid2X2,Layers3,Menu,Moon,Palette,Search,Settings2,Shapes,SlidersHorizontal,Sun,Waves,X} from "lucide-react";
 import {P0Showcase} from "./lib/p0/P0Showcase";
 import {HTMLDeckGallery} from "./lib/p0/HTMLDeckGallery";
 import {BrandailyWorkbench} from "./lib/workflows/BrandailyWorkbench";
@@ -17,7 +17,6 @@ const prefKey="pcl.quiet-canvas.appearance.v1";
 const savedKey="pcl.quiet-canvas.saved.v1";
 const navGroups=["Discover","Collections","Studio"] as const;
 type OpenItem={id:string;name:string;description:string;kind:"Native"|"MotionBrew";files:string[];dependencies:string[];source?:string};
-const nativeRegistry=new Set(sourceRegistry.filter(item=>!item.name.startsWith("motionbrew-")).map(item=>item.name));
 const index=sourceRegistry.map(item=>{
  const slug=item.name.replace(/^motionbrew-/,"");
  const m=motionComponents.find(c=>c.slug===slug);
@@ -96,7 +95,7 @@ function Overview({navigate}: {navigate:(page:SectionId)=>void}){
    <div className="qc-pathways"><div className="qc-section-line"><div><EyeLabel>DISCOVER</EyeLabel><h2>Explore by collection.</h2></div></div>
     {[
       {id:"components",name:"Component registry",detail:"Original and imported source files",count:String(materialCounts.registry),icon:<Layers3 size={20}/>},
-      {id:"motionbrew",name:"Motion & interaction",detail:"All MotionBrew components",count:String(materialCounts.motion),icon:<Waveform size={20}/>},
+      {id:"motionbrew",name:"Motion & interaction",detail:"All MotionBrew components",count:String(materialCounts.motion),icon:<Waves size={20}/>},
       {id:"styles",name:"Visual systems",detail:"Distinctive design directions",count:String(materialCounts.styles),icon:<Palette size={20}/>},
       {id:"blueprints",name:"Narrative blueprints",detail:"Strategic storytelling structures",count:String(materialCounts.blueprints),icon:<FileText size={20}/>},
       {id:"references",name:"Reference shelf",detail:"React Bits inspiration, labeled as references",count:String(materialCounts.references),icon:<BookOpen size={20}/>}
@@ -280,7 +279,7 @@ function QuietCanvasPortal(){
  const nav=<><div className="qc-brand"><span className="qc-brand-symbol" aria-hidden="true"><span>◈</span></span><span><strong>quiet canvas<span className="qc-brand-period">.</span></strong><small>YOUR DESIGN LIBRARY</small></span></div>
    <div className="qc-nav-scroll">{navGroups.map(group=><div className="qc-nav-group" key={group}>
      <span className="qc-nav-heading">{group}</span><nav aria-label={group+" sections"}>{sections.filter(s=>s.group===group).map(s=><button key={s.id} aria-current={section===s.id?"page":undefined} onClick={()=>navigate(s.id)}>
-       <span className="qc-nav-icon" aria-hidden="true">{s.id==="overview"?<Grid2X2 size={17}/>:s.id==="components"?<Layers3 size={17}/>:s.id==="motionbrew"?<Waveform size={17}/>:s.id==="decks"?<FileText size={17}/>:s.id==="references"?<BookOpen size={17}/>:s.id==="styles"?<Palette size={17}/>:s.id==="blueprints"?<Shapes size={17}/>:<SlidersHorizontal size={17}/>}</span><span>{s.name}</span>
+       <span className="qc-nav-icon" aria-hidden="true">{s.id==="overview"?<Grid2X2 size={17}/>:s.id==="components"?<Layers3 size={17}/>:s.id==="motionbrew"?<Waves size={17}/>:s.id==="decks"?<FileText size={17}/>:s.id==="references"?<BookOpen size={17}/>:s.id==="styles"?<Palette size={17}/>:s.id==="blueprints"?<Shapes size={17}/>:<SlidersHorizontal size={17}/>}</span><span>{s.name}</span>
        {s.id==="components"&&<em>{materialCounts.registry}</em>}{s.id==="motionbrew"&&<em>{materialCounts.motion}</em>}
      </button>)}</nav></div>)}</div>
    <div className="qc-sidebar-footer"><div className="qc-sidebar-mini"><span className="qc-live-pulse"/><span>Library preview<br/><small>Source-backed, always evolving</small></span></div><a href={notionTracker} target="_blank" rel="noreferrer">Development notes <ArrowUpRight size={14}/></a></div></>;
