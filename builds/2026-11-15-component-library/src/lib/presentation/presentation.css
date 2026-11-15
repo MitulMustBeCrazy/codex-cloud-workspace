@@ -45,3 +45,12 @@
 @media(max-width:900px){.pcl-presentation-grid{grid-template-columns:1fr}.pcl-kinetic{font-size:clamp(30px,7vw,74px)}}
 @media(max-width:550px){.pcl-comparison{grid-template-columns:1fr}.pcl-comparison h3{margin:12px 0}.pcl-roadmap{grid-template-columns:1fr}.pcl-kinetic{font-size:clamp(26px,8vw,44px)}}
 @media(prefers-reduced-motion:reduce){.pcl-reveal,.pcl-kinetic span{transition:none!important;transform:none!important;filter:none!important;opacity:1!important}}
+
+/* Video uses the same underlying media node before and during fullscreen CSS expansion. */
+.pcl-media.is-expanded[data-kind="video"]{position:fixed;inset:0;z-index:9999;background:#05090bf6;display:grid;place-items:center;padding:2.5vh 4vw}
+.pcl-media.is-expanded[data-kind="video"] .pcl-media__surface{width:min(100%,calc(90vh * 16/9));aspect-ratio:16/9;max-height:90vh;border-radius:0;background:#000;overflow:visible}
+.pcl-media.is-expanded[data-kind="video"] video{cursor:pointer;object-fit:contain;max-height:90vh}
+.pcl-media.is-expanded[data-kind="video"] .pcl-media__controls{bottom:-4px;background:#081318e9;transform:translateY(100%);border-radius:0 0 12px 12px}
+.pcl-media__video-close{position:fixed;right:20px;top:18px;z-index:10001;border:1px solid #ffffff77;background:#1c2d37;color:#fff;padding:11px 15px;border-radius:8px;cursor:pointer}
+.pcl-media__video-close:focus-visible{outline:3px solid #c2dce5;outline-offset:3px}
+@media(max-width:650px){.pcl-media.is-expanded[data-kind="video"]{padding:30px 6px}.pcl-media.is-expanded[data-kind="video"] .pcl-media__surface{width:100%}.pcl-media.is-expanded[data-kind="video"] .pcl-media__controls{padding:7px}}
