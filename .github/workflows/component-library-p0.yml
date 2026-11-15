@@ -37,6 +37,8 @@ jobs:
         run: npm run build
       - name: Execute unit and source tests
         run: npm test
+      - name: Verify independent dashboard and presentation consumer bundles
+        run: npm run test:consumers
       - name: Verify MotionBrew all-source registry output
         run: |
           test -f public/r/motionbrew-blur-text.json
