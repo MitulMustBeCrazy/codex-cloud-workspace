@@ -11,6 +11,7 @@ on:
   pull_request:
     branches:
       - prototype/personal-component-library
+      - feature/pcl-p0-p2-2026-11-15
     paths:
       - 'builds/2026-11-15-component-library/**'
       - '.github/workflows/component-library-p0.yml'
