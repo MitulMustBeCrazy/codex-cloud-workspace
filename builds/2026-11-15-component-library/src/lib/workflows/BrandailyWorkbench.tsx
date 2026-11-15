@@ -4,7 +4,6 @@ import { calendarDay, calendarWeek, calendarMonth, calendarQuarter, calendarYear
 import { TodayTaskCard } from "../p0/TodayTaskCard";
 import type { TodayTask, PromotionTarget } from "../p0/TodayTaskCard";
 import { P0MetricCard } from "../p0/MetricCard";
-import "./brandaily.css";
 
 export type MentionEntity = { id: string; label: string; type: "person"|"task"|"campaign" };
 export type MentionReference = MentionEntity & {start:number;end:number;display:string};
