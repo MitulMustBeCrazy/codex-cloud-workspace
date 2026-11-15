@@ -51,7 +51,12 @@ export function checkReleaseInventory({registry,manifest,previewCatalog,recipeId
  return {valid:errors.length===0,errors,requiredRoutes:routes};
 }
 
-export function resolveBuildCommit(env={}){\n const sha=env.CF_PAGES_COMMIT_SHA||env.GITHUB_SHA;\n return typeof sha==="string"&&sha.trim()?sha:null;\n}\n\nexport function buildReleaseManifest({registry,manifest,previewCatalog,recipeIds=[],files,commit=null}){
+export function resolveBuildCommit(env={}) {
+ const sha=env.CF_PAGES_COMMIT_SHA||env.GITHUB_SHA;
+ return typeof sha==="string"&&sha.trim()?sha:null;
+}
+
+export function buildReleaseManifest({registry,manifest,previewCatalog,recipeIds=[],files,commit=null}){
  const check=checkReleaseInventory({registry,manifest,previewCatalog,recipeIds,files});
  const readiness={"source-only":0,"fixture-ready":0,"demo-verified":0,"consumer-verified":0};
  for(const entry of previewCatalog?.components||[]){
