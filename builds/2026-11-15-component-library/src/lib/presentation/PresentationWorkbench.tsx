@@ -109,7 +109,7 @@ export function ComparisonStory({left,right,label="Strategic comparison"}:{
 }
 export type RoadmapItem={id:string;phase:string;title:string;detail:string;status?:"planned"|"ongoing"|"done"};
 export function RoadmapTimeline({items=[]}:{items?:RoadmapItem[]}){
- return <ol className="pcl-roadmap" aria-label="Strategy roadmap">{items.map((item,i)=><li key={item.id}>
+ return <ol className="pcl-roadmap" aria-label="Strategy roadmap">{items.map(item=><li key={item.id}>
    <span>{item.phase}</span><div className="pcl-roadmap__dot" aria-hidden="true"/>
    <h3>{item.title}</h3><p>{item.detail}</p><small>{item.status||"planned"}</small>
  </li>)}</ol>;
