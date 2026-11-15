@@ -6,7 +6,7 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { SlideFrame, WordCloud, ComparisonStory, RoadmapTimeline, MediaStage, PresentationWorkbench } from "./PresentationWorkbench";
 
 test("slide frame uses 16:9 stage and semantic slide label",()=>{
- const html=renderToStaticMarkup(createElement(SlideFrame,{label:"Strategic context"},createElement("span",null,"Hello")));
+ const html=renderToStaticMarkup(<SlideFrame label="Strategic context"><span>Hello</span></SlideFrame>);
  assert.match(html,/Strategic context/);assert.match(html,/Hello/);assert.match(html,/pcl-slide-frame/);
 });
 test("word cloud renders readable terms and a named graphic",()=>{
