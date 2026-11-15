@@ -51,6 +51,7 @@ export function insertMention(text,range,entity){
   const next=text.slice(0,range.start)+display+text.slice(range.end);
   return {text:next,cursor:range.start+display.length,reference:{id:entity.id,type:entity.type,label:entity.label,start:range.start,end:range.start+display.length,display}};
 }
+/** @param {Array<Record<string,string|number|null>>} rows @param {{query?:string,filters?:Record<string,string|number|null>,sort?:{key:string,direction:"asc"|"desc"}}} options */
 export function filterAndSort(rows,{query="",filters={},sort}={}){
   const q=String(query).trim().toLocaleLowerCase();
   const result=rows.filter(row=>{
