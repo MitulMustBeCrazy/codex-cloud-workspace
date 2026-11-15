@@ -51,7 +51,7 @@ export function checkReleaseInventory({registry,manifest,previewCatalog,recipeId
  return {valid:errors.length===0,errors,requiredRoutes:routes};
 }
 
-export function buildReleaseManifest({registry,manifest,previewCatalog,recipeIds=[],files,commit=null}){
+export function resolveBuildCommit(env={}){\n const sha=env.CF_PAGES_COMMIT_SHA||env.GITHUB_SHA;\n return typeof sha==="string"&&sha.trim()?sha:null;\n}\n\nexport function buildReleaseManifest({registry,manifest,previewCatalog,recipeIds=[],files,commit=null}){
  const check=checkReleaseInventory({registry,manifest,previewCatalog,recipeIds,files});
  const readiness={"source-only":0,"fixture-ready":0,"demo-verified":0,"consumer-verified":0};
  for(const entry of previewCatalog?.components||[]){
@@ -90,7 +90,7 @@ async function runCLI(){
    if(details.isFile()&&details.size>0)files.set(route,await readFile(path,"utf8"));
   }catch{/* missing assets reported below */}
  }
- const report=buildReleaseManifest({...config,files,commit:process.env.GITHUB_SHA||null});
+ const report=buildReleaseManifest({...config,files,commit:resolveBuildCommit(process.env)});
  if(!report.checks.valid)throw new Error("P4 release gate failed:\n"+report.checks.errors.join("\n"));
  const output=join(root,"dist","release-manifest.json");
  if(process.argv.includes("--write")){
