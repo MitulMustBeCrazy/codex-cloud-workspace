@@ -135,7 +135,7 @@ export function DataExplorer({rows=[],columns=[],searchable=true}:{
  rows?:Record<string,string|number|null>[];columns?:DataColumn[];searchable?:boolean;
 }){
  const [query,setQuery]=useState(""),[sort,setSort]=useState<{key:string;direction:"asc"|"desc"}|undefined>(undefined);
- const visible=filterAndSort(rows,{query,sort});
+ const visible=filterAndSort(rows,{query,filters:{},sort}) as Record<string,string|number|null>[];
  return <section className="pcl-explorer" aria-label="Performance data explorer">
   <header className="pcl-panel-header"><div><span className="pcl-eyebrow">MEASUREMENT</span><h2>Data explorer</h2></div><span className="pcl-count">{visible.length} rows</span></header>
   {searchable&&<label className="pcl-search-label">Filter performance data<input type="search" value={query} onChange={e=>setQuery(e.target.value)} placeholder="Search rows…" /></label>}
