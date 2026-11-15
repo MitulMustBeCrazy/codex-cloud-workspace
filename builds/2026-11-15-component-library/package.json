@@ -12,7 +12,8 @@
     "predev": "npm run sync:decks && npm run build:registry",
     "prebuild": "npm run sync:decks && npm run build:registry",
     "build:registry": "node scripts/build-registry.mjs",
-    "test:e2e": "playwright test"
+    "test:e2e": "playwright test",
+    "test:consumers": "node scripts/verify-consumer-install.mjs dashboard deck"
   },
   "dependencies": {
     "react": "^19.2.0",
