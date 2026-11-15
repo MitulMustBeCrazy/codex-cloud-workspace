@@ -39,6 +39,17 @@ jobs:
           test -f public/decks/pitch-inspired/editorial.html
           test -f public/r/pcl-brandaily-workflows.json
           test -f public/r/pcl-deck-presentation.json
+      - name: Install Chromium for browser QA
+        run: npx playwright install chromium
+      - name: Test browser interactions, responsive layouts and accessibility
+        run: npm run test:e2e
+      - name: Upload browser review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: personal-component-library-browser-review
+          path: builds/2026-11-15-component-library/test-results/
+          if-no-files-found: ignore
       - name: Upload isolated preview build
         uses: actions/upload-artifact@v4
         with:
