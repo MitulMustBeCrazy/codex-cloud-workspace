@@ -1,12 +1,15 @@
 import { useMemo, useState } from "react";
 import { P0Showcase } from "./lib/p0/P0Showcase";
 import { HTMLDeckGallery } from "./lib/p0/HTMLDeckGallery";
+import { BrandailyWorkbench } from "./lib/workflows/BrandailyWorkbench";
+import { PresentationWorkbench } from "./lib/presentation/PresentationWorkbench";
+import { AdvancedWorkbench } from "./lib/advanced/AdvancedWorkbench";
 import { items, visualStyles, blueprints } from "./catalog";
 import type { LibraryItem, VisualStyle, Blueprint } from "./catalog";
 import { ActivityTimeline, ChapterOpener, HeadlineReveal, MediaLightbox, MetricCard, PeriodSwitcher, ProgressMeter, StatusPill, SurfaceCard, TaskQueue } from "./components";
 
-type Tab = "Components" | "Visual styles" | "Deck blueprints" | "P0 showcase" | "HTML deck gallery";
-const tabs: Tab[] = ["Components", "Visual styles", "Deck blueprints", "P0 showcase", "HTML deck gallery"];
+type Tab = "Components" | "Visual styles" | "Deck blueprints" | "P0 showcase" | "HTML deck gallery" | "Brandaily P0" | "Presentation P0" | "P1 + P2 Lab";
+const tabs: Tab[] = ["Components", "Visual styles", "Deck blueprints", "P0 showcase", "HTML deck gallery", "Brandaily P0", "Presentation P0", "P1 + P2 Lab"];
 const areas = ["All", "Core", "Brandaily", "Data", "Presentation", "Motion", "Media"];
 
 function Preview({ item }: { item: LibraryItem }) {
@@ -69,7 +72,7 @@ function App() {
   return <div className="app-shell">
     <aside className="sidebar"><div className="brand"><span className="brand-mark">CL</span><div><strong>Component Library</strong><small>Personal design system</small></div></div>
       <div className="sidebar-label">LIBRARY</div>
-      <nav aria-label="Library sections">{tabs.map((x,i) => <button key={x} type="button" className={"nav-item " + (tab === x ? "active" : "")} onClick={() => setTab(x)}><span className="nav-icon">{["▦","◫","▤","◉","▣"][i]}</span>{x}</button>)}</nav>
+      <nav aria-label="Library sections">{tabs.map((x,i) => <button key={x} type="button" className={"nav-item " + (tab === x ? "active" : "")} onClick={() => setTab(x)}><span className="nav-icon">{["▦","◫","▤","◉","▣","▥","▤","✧"][i]}</span>{x}</button>)}</nav>
       <div className="sidebar-bottom"><span className="side-indicator"/><span>Unpublished source prototype<br/><small>Version 0.1 · Not deployed</small></span></div>
     </aside>
     <main className="main">
@@ -92,6 +95,9 @@ function App() {
         </>}
         {tab === "P0 showcase" && <P0Showcase/>}
         {tab === "HTML deck gallery" && <HTMLDeckGallery/>}
+        {tab === "Brandaily P0" && <BrandailyWorkbench/>}
+        {tab === "Presentation P0" && <PresentationWorkbench/>}
+        {tab === "P1 + P2 Lab" && <AdvancedWorkbench/>}
         <footer className="footer"><span>Built for reuse, not volume.</span><span>Component Library / v0.1</span></footer>
       </div>
     </main>
