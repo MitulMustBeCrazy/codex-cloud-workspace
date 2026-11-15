@@ -53,3 +53,12 @@ These commands are instructions for future verification; they have **not been ex
 
 Nothing is deployed. Sample content is fictional and illustrative.
 Review licenses before importing third-party code. Design references are not automatically licensed templates.
+
+## P0 implementation kickoff (15 November 2026)
+
+- Added controlled, reusable TodayTaskCard, P0MetricCard and P0ProgressMeter in `src/lib/p0/`; new `P0 showcase` tab in gallery.
+- Added three original Pitch-inspired HTML micro-decks in `templates/pitch-inspired/`: Editorial, Board Report and KPI Report.
+- Added shared deck engine for staged reveals, keyboard/swipe navigation, auto pace, reduced-motion and print styling.
+- Added source-level tests and isolated-branch GitHub Actions workflow. Browser QA/production release **not yet verified**.
+- [Notion project tracker](https://app.notion.com/p/419a73a0b5f9810b9170fa023fc6f23b) with P0 board, catalog, templates and session log.
+- Read `docs/SESSION_PROTOCOL.md` at the start of the next development session and record evidence before changing status to Verified.
