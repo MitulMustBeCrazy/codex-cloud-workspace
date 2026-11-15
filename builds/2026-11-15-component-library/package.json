@@ -10,10 +10,11 @@
     "test": "node --test src/lib/p0/p0.test.cjs templates/pitch-inspired/deck-core.test.cjs src/lib/system/*.test.mjs src/lib/motionbrew/motionbrew.test.mjs src/lib/motionbrew/preview-status.test.mjs templates/pitch-inspired/*.test.mjs scripts/registry.test.mjs scripts/consumer-install.test.mjs && node --import tsx --test src/lib/workflows/brandaily.test.tsx src/lib/presentation/presentation.test.tsx src/lib/advanced/advanced.test.tsx src/quietCanvasData.test.tsx",
     "sync:decks": "node scripts/sync-decks.mjs",
     "predev": "npm run sync:decks && npm run build:registry",
-    "prebuild": "npm run sync:decks && npm run build:registry",
+    "prebuild": "npm run sync:decks && npm run build:registry && npm run build:consumers",
     "build:registry": "node scripts/build-registry.mjs",
     "test:e2e": "playwright test",
-    "test:consumers": "node scripts/verify-consumer-install.mjs dashboard deck"
+    "test:consumers": "node scripts/verify-consumer-install.mjs dashboard deck",
+    "build:consumers": "node scripts/verify-consumer-install.mjs --publish dashboard deck"
   },
   "dependencies": {
     "react": "^19.2.0",
