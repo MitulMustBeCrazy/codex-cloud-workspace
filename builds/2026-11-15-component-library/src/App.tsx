@@ -1,10 +1,11 @@
 import { useMemo, useState } from "react";
+import { P0Showcase } from "./lib/p0/P0Showcase";
 import { items, visualStyles, blueprints } from "./catalog";
 import type { LibraryItem, VisualStyle, Blueprint } from "./catalog";
 import { ActivityTimeline, ChapterOpener, HeadlineReveal, MediaLightbox, MetricCard, PeriodSwitcher, ProgressMeter, StatusPill, SurfaceCard, TaskQueue } from "./components";
 
-type Tab = "Components" | "Visual styles" | "Deck blueprints";
-const tabs: Tab[] = ["Components", "Visual styles", "Deck blueprints"];
+type Tab = "Components" | "Visual styles" | "Deck blueprints" | "P0 showcase";
+const tabs: Tab[] = ["Components", "Visual styles", "Deck blueprints", "P0 showcase"];
 const areas = ["All", "Core", "Brandaily", "Data", "Presentation", "Motion", "Media"];
 
 function Preview({ item }: { item: LibraryItem }) {
@@ -88,6 +89,7 @@ function App() {
           <div className="eyebrow">03 / THE NARRATIVE</div><h1>Structure before<br/><em>decoration.</em></h1><p className="page-intro">Narrative blueprints are adaptable, slide-by-slide structures. Apply any compatible visual style and assemble the slides from your component library.</p>
           <div className="blueprints">{blueprints.map(b => <BlueprintCard key={b.id} blueprint={b}/>)}</div>
         </>}
+        {tab === "P0 showcase" && <P0Showcase/>}
         <footer className="footer"><span>Built for reuse, not volume.</span><span>Component Library / v0.1</span></footer>
       </div>
     </main>
