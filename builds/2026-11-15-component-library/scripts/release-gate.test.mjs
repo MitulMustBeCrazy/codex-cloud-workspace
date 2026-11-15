@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import {createReleaseRoutes,checkReleaseInventory,buildReleaseManifest} from "./release-gate.mjs";
+import {createReleaseRoutes,checkReleaseInventory,buildReleaseManifest,resolveBuildCommit} from "./release-gate.mjs";
 
 function fixture(){
  const registry={items:[{name:"motionbrew-blur-text"},{name:"pcl-workflow-logic"}]};
@@ -52,4 +52,10 @@ test("release gate rejects unsupported readiness and false verified claims",()=>
  const result=checkReleaseInventory(f);
  assert.equal(result.valid,false);
  assert.ok(result.errors.some(x=>/preview catalog/i.test(x)));
+});
+
+test("P4 hosted release provenance prefers Cloudflare deployment commit over CI metadata",()=>{
+ assert.equal(resolveBuildCommit({CF_PAGES_COMMIT_SHA:"cloudflare-sha",GITHUB_SHA:"github-sha"}),"cloudflare-sha");
+ assert.equal(resolveBuildCommit({GITHUB_SHA:"github-sha"}),"github-sha");
+ assert.equal(resolveBuildCommit({}),null);
 });
