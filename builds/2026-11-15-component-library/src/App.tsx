@@ -7,6 +7,7 @@ import { AdvancedWorkbench } from "./lib/advanced/AdvancedWorkbench";
 import "./lib/workflows/brandaily.css";
 import "./lib/presentation/presentation.css";
 import "./lib/advanced/advanced.css";
+import "./lib/p0/gallery.css";
 import { items, visualStyles, blueprints } from "./catalog";
 import type { LibraryItem, VisualStyle, Blueprint } from "./catalog";
 import { ActivityTimeline, ChapterOpener, HeadlineReveal, MediaLightbox, MetricCard, PeriodSwitcher, ProgressMeter, StatusPill, SurfaceCard, TaskQueue } from "./components";
