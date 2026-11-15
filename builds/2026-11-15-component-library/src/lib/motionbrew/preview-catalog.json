@@ -1,0 +1,1285 @@
+{
+  "version": 1,
+  "source": "MotionBrew",
+  "sourceCount": 100,
+  "components": [
+    {
+      "slug": "account-menu",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "action-menu",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "activity-grid",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "add-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "amount-slider",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "annotation-text",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low"
+    },
+    {
+      "slug": "aura-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "auth-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "avatar-testimonial",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "backspace-text",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low"
+    },
+    {
+      "slug": "bell-toggle",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "bill-list",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "binary-text",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low"
+    },
+    {
+      "slug": "blur-accordion",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "blur-text",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low"
+    },
+    {
+      "slug": "booking-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "brand-bridge",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "calendar-agenda",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "channel-mix",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "column-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "contact-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "context-menu",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low"
+    },
+    {
+      "slug": "contour-feature-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "contour-lines",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "decay-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "deploy-streak",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "depth-carousel",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "device-traffic",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "download-button",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "duo-flip",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "event-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "file-drop",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "flip-words",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low"
+    },
+    {
+      "slug": "flux-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "fuse-button",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "globe-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [
+        "WebGL-capable browser"
+      ],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "high"
+    },
+    {
+      "slug": "goal-gauge",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "gradient-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "gradient-text",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low"
+    },
+    {
+      "slug": "gravity-tag-pile",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "growth-stream",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "highlight-text",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low"
+    },
+    {
+      "slug": "hold-to-confirm",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "infinite-gallery",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "integration-hub",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "liquid-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "liquid-metal-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "liquid-tabs",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "magnetic-button",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "magnetic-flow",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "message-composer",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "metal-card-stack",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "metric-split",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "mix-chart",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "month-calendar",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "morph-search",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "orbit-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "otp-code",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "particle-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "payment-form",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "pill-tabs",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "pixel-blast",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "pixel-feature-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "pixel-scroll",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "pricing-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "prism-carousel",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "prism-flow",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "privacy-banner",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "profile-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "profile-menu",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "project-index",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "prompt-input",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "quota-gauge",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "range-chart",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "reaction-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "recap-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "receipt-button",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "ribbon-gallery",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "roadmap-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "rolling-card-stack",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "rolling-stepper",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "rotating-text",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low"
+    },
+    {
+      "slug": "score-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "search-modal",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "shimmer-text",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low"
+    },
+    {
+      "slug": "sidebar-nav",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "slide-commit",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "spatial-gallery",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "spending-meter",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "tab-bar",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "team-member-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "team-morph",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "tilt-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "tilt-carousel",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "toast-stack",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "usage-ring",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "verify-flow",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "voice-prompt",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "wallet-card",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown"
+    },
+    {
+      "slug": "wave-text",
+      "status": "source-only",
+      "fixture": null,
+      "needs": [],
+      "notes": "Provider source is imported. Preview behavior and integration require component-level verification.",
+      "featured": true,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low"
+    }
+  ]
+}
