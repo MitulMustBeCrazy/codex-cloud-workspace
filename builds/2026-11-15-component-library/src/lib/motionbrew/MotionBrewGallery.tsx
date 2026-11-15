@@ -104,7 +104,7 @@ export function MotionBrewGallery() {
     <div className="mb-results"><span>{matches.length} components</span><span>Full source imported · activate previews individually to conserve performance</span></div>
     <div className="mb-card-grid">
       {matches.map(item=><article className="mb-component-card" key={item.slug}>
-        <button className="mb-component-card__main" type="button" onClick={()=>setSelected(item.slug)} aria-label={"Inspect "+item.name}>
+        <button className="mb-component-card__main" type="button" onClick={()=>setSelected(item.slug)} aria-label={"Inspect "+item.name.replace(/([a-z])([A-Z])/g,"$1 $2")+" ("+item.name+")"}>
           <div className="mb-card-art"><span>{item.category}</span><strong>{item.name.replace(/([a-z])([A-Z])/g,"$1 $2")}</strong><i>{item.engine}</i></div>
           <div className="mb-card-info"><span className="mb-trigger">{item.trigger}</span><h3>{item.name}</h3><p>{item.description}</p></div>
         </button>
