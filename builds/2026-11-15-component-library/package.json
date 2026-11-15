@@ -7,7 +7,10 @@
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview",
-    "test": "node --test src/lib/p0/p0.test.cjs templates/pitch-inspired/deck-core.test.cjs"
+    "test": "node --test src/lib/p0/p0.test.cjs templates/pitch-inspired/deck-core.test.cjs",
+    "sync:decks": "node scripts/sync-decks.mjs",
+    "predev": "npm run sync:decks",
+    "prebuild": "npm run sync:decks"
   },
   "dependencies": {
     "react": "^19.2.0",
