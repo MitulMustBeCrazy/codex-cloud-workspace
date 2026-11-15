@@ -68,7 +68,7 @@ function App() {
     <aside className="sidebar"><div className="brand"><span className="brand-mark">CL</span><div><strong>Component Library</strong><small>Personal design system</small></div></div>
       <div className="sidebar-label">LIBRARY</div>
       <nav aria-label="Library sections">{tabs.map((x,i) => <button key={x} type="button" className={"nav-item " + (tab === x ? "active" : "")} onClick={() => setTab(x)}><span className="nav-icon">{["▦","◫","▤"][i]}</span>{x}</button>)}</nav>
-      <div className="sidebar-bottom"><span className="side-indicator"/><span>Private working prototype<br/><small>Version 0.1 · Not deployed</small></span></div>
+      <div className="sidebar-bottom"><span className="side-indicator"/><span>Unpublished source prototype<br/><small>Version 0.1 · Not deployed</small></span></div>
     </aside>
     <main className="main">
       <header className="topbar"><div className="breadcrumb">Library <span>/</span> {tab}</div><div className="topbar-meta">BUILD 01 <span>·</span> 2026</div></header>
