@@ -1,7 +1,8 @@
 import {test,expect} from "@playwright/test";
 import {mkdir,writeFile} from "node:fs/promises";
-import manifest from "../../src/lib/motionbrew/manifest.json";
-import previewCatalog from "../../src/lib/motionbrew/preview-catalog.json";
+import {readFileSync} from "node:fs";
+const manifest=JSON.parse(readFileSync(new URL("../../src/lib/motionbrew/manifest.json",import.meta.url),"utf8"));
+const previewCatalog=JSON.parse(readFileSync(new URL("../../src/lib/motionbrew/preview-catalog.json",import.meta.url),"utf8"));
 
 test("diagnose all 100 MotionBrew on-demand default previews without falsely certifying source-only items",async({page})=>{
  test.setTimeout(240000);
