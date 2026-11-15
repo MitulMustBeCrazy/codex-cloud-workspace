@@ -19,8 +19,8 @@ export function CommandPalette({open,commands,onClose,title="Command palette"}:{
  };
  return <div className="pcl-command-overlay" onMouseDown={event=>{if(event.target===event.currentTarget)onClose()}}>
    <section className="pcl-command" role="dialog" aria-modal="true" aria-label={title}>
-     <div className="pcl-command__search"><span aria-hidden="true">⌕</span><input ref={searchRef} type="search" aria-label="Search commands" placeholder="Search pages, actions, components…" value={query} onChange={e=>{setQuery(e.target.value);setSelected(0)}} onKeyDown={key}/><button onClick={onClose} aria-label="Close command palette">Esc</button></div>
-     <ul role="listbox" aria-label="Matching commands">{items.map((c,i)=><li key={c.id} role="option" aria-selected={i===selected}><button onMouseEnter={()=>setSelected(i)} onClick={()=>choose(c)}>
+     <div className="pcl-command__search"><span aria-hidden="true">⌕</span><input ref={searchRef} type="search" aria-label="Search commands" placeholder="Search pages, actions, components…" value={query} onChange={e=>{setQuery(e.target.value);setSelected(0)}} onKeyDown={key}/><button onClick={onClose} aria-label="Close command palette">Close</button></div>
+     <ul aria-label="Matching commands">{items.map((c,i)=><li key={c.id} data-selected={i===selected}><button onMouseEnter={()=>setSelected(i)} onClick={()=>choose(c)}>
        <span><small>{c.group||"Action"}</small>{c.label}</span><kbd>{c.shortcut||"↵"}</kbd>
      </button></li>)}</ul>
      {!items.length&&<p className="pcl-empty">No matching commands</p>}
