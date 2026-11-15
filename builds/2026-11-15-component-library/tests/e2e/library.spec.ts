@@ -43,6 +43,7 @@ test("ten gallery templates open self-contained HTML presentations",async({page}
  await expect(page.locator(".deck [data-slide].is-current")).toHaveCount(1);
  await page.getByRole("button",{name:"Next reveal"}).click();
  await expect(page.locator(".deck [data-slide].is-current [data-reveal].is-visible")).toHaveCount(2);
+ await expect(page.locator(".deck [data-slide].is-current [data-reveal].is-visible").last()).toHaveCSS("opacity","1");
  await page.screenshot({path:"test-results/sonic-deck.png",fullPage:true});
 });
 
@@ -56,6 +57,7 @@ test("small viewport avoids horizontal page overflow and preserves slide navigat
  await expect(page.locator(".deck")).toBeVisible();
  await page.keyboard.press("ArrowRight");
  await expect(page.locator(".deck [data-slide].is-current [data-reveal].is-visible")).toHaveCount(2);
+ await expect(page.locator(".deck [data-slide].is-current [data-reveal].is-visible").last()).toHaveCSS("opacity","1");
  await page.screenshot({path:"test-results/board-mobile.png",fullPage:true});
 });
 
