@@ -14,7 +14,7 @@ for (const file of files) {
     assert.match(src, /deck-core\.js/);
     assert.match(src, /data-reveal/);
     assert.match(src, /data-auto/);
-    assert.match(src, /</html>/);
+    assert.ok(src.includes("</html>"));
   });
 }
 
