@@ -38,3 +38,12 @@ Project root: builds/2026-11-15-component-library
 - src/lib/p0/: TodayTaskCard, MetricCard, ProgressMeter and P0Showcase.
 - templates/pitch-inspired/: original Editorial, Board Report, KPI Report mini-decks, deck-core.js/CSS and test harness.
 - .github/workflows/component-library-p0.yml: CI definition, status requires run verification.
+
+## Active A+B milestone (2026-11-16)
+- Combined gallery-first and reuse-first work has its own isolated GitHub branch: `feature/pcl-gallery-and-reuse-2026-11-16`.
+- Draft PR: https://github.com/MitulMustBeCrazy/codex-cloud-workspace/pull/4
+- Development preview project: https://pcl-gallery-reuse-review.pages.dev/ (verify hosting status before calling live).
+- Current canonical Quiet Canvas portal: https://pcl-component-library-review.pages.dev/ (unchanged until approved).
+- Source-truth preview readiness catalog: `src/lib/motionbrew/preview-catalog.json`; default all 100 are `source-only` until evidence supports promotion.
+- 16 selected registry imports are independently built in dashboard and deck consumer Vite roots; browser validation and full 100-preview fixture coverage remain open.
+- Full design and implementation plan: `docs/superpowers/specs/2026-11-16-gallery-and-reuse-design.md` and `docs/superpowers/plans/2026-11-16-gallery-and-reuse-implementation.md`.
