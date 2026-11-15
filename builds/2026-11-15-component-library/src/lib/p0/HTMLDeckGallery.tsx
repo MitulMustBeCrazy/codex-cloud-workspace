@@ -4,7 +4,7 @@ const decks = [
   { id: "kpi-report", title: "KPI Evidence", category: "Performance reporting", description: "Clear metrics, evidence panels and progressive chart explanations without losing analytical readability.", surface: "#f6f8f8", text: "#22353d", accent: "#3b7382", headline: "Measure what moves us.", source: "KPI Report" },
 ];
 export function HTMLDeckGallery() {
-  const base = import.meta.env.BASE_URL;
+  const base = "./";
   return <section aria-label="Original HTML deck templates">
     <div className="eyebrow">05 / HTML PRESENTATION TEMPLATES</div>
     <h1 style={{marginTop:18}}>Storytelling,<br/><em>ready to adapt.</em></h1>
