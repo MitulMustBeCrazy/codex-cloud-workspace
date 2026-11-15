@@ -394,3 +394,11 @@
 .qc-shell .pcl-deck-gallery__actions a{color:#fff!important;background:#A72536!important}
 .qc-shell .qc-tile-bottom h3 span{color:color-mix(in srgb,var(--qc-accent) 66%,var(--qc-ink))!important}
 .qc-shell .qc-feature-tile{text-decoration:none}
+
+/* Selected filters use high-contrast ink; accent survives in the soft surface. */
+.qc-shell .mb-category-tabs button[aria-pressed=true],
+.qc-shell .pcl-deck-gallery__filters button.is-active{
+ color:var(--qc-ink)!important;
+ background:var(--qc-accent-soft)!important;
+ font-weight:700;
+}
