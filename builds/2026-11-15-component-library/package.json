@@ -11,7 +11,8 @@
     "sync:decks": "node scripts/sync-decks.mjs",
     "predev": "npm run sync:decks && npm run build:registry",
     "prebuild": "npm run sync:decks && npm run build:registry",
-    "build:registry": "node scripts/build-registry.mjs"
+    "build:registry": "node scripts/build-registry.mjs",
+    "test:e2e": "playwright test"
   },
   "dependencies": {
     "react": "^19.2.0",
@@ -24,6 +25,8 @@
     "typescript": "~5.9.0",
     "vite": "^7.0.0",
     "tsx": "^4.20.0",
-    "@types/node": "^22.15.0"
+    "@types/node": "^22.15.0",
+    "@playwright/test": "^1.56.0",
+    "@axe-core/playwright": "^4.10.2"
   }
 }
