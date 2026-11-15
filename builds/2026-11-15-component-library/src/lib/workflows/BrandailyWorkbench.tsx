@@ -72,7 +72,7 @@ export function CalendarPanel({view="Month",date="2026-11-15",events=[],onViewCh
   const lookup=(day:string)=>events.filter(e=>e.date<=day&&(!e.endDate||e.endDate>=day));
   const cells=view==="Year"?calendarYear(date):view==="Quarter"?calendarQuarter(date):view==="Month"?calendarMonth(date):view==="Week"?calendarWeek(date):calendarDay(date);
   const title=view==="Year"?date.slice(0,4):view==="Quarter"?"Q"+(Math.floor((Number(date.slice(5,7))-1)/3)+1)+" "+date.slice(0,4):fmt(date,{month:"long",year:"numeric"});
-  return <section className="pcl-calendar" aria-label="Calendar - "+view+" view">
+  return <section className="pcl-calendar" aria-label={"Calendar - "+view+" view"}>
     <header className="pcl-panel-header">
       <div><span className="pcl-eyebrow">TEAM PLANNING</span><h2>Calendar</h2></div>
       <div className="pcl-calendar__nav"><button aria-label="Previous period" onClick={()=>onDateChange?.(shiftCalendar(date,view,-1))}>‹</button><strong>{title}</strong><button aria-label="Next period" onClick={()=>onDateChange?.(shiftCalendar(date,view,1))}>›</button></div>
