@@ -23,7 +23,7 @@ export function P0Showcase() {
     <p className="page-intro">Reusable, externally controlled components for Brandaily and performance decks. Interactions below use local demonstration data only.</p>
     <div style={{display:"grid",gridTemplateColumns:"repeat(auto-fit,minmax(min(100%,320px),1fr))",gap:18,alignItems:"start"}}>
       <TodayTaskCard tasks={tasks} onToggle={update} onAssign={assign} onPromote={promote}
-        onAdd={() => setTasks((current) => [...current,{id:"new-"+current.length,title:"New priority task",completed:false,priority:"low"}])}/>
+        onAdd={() => setTasks((current) => [...current,{id:"new-"+current.length,title:"New priority task",completed:false,priority:"low" as const}])}/>
       <div style={{display:"grid",gap:18}}>
         <P0MetricCard label="Campaign reach" value={2480000} trend={{value:18.6,direction:"up",positiveWhen:"up",comparison:"vs previous period"}} period="Last 30 days" note="Demo values" />
         <P0MetricCard label="Cost per acquisition" value={415.5} prefix="৳" trend={{value:8.2,direction:"down",positiveWhen:"down",comparison:"vs previous period"}} />
