@@ -1,6 +1,13 @@
-name: Component Library P0 QA
+name: Component Library P0-P2 QA
 on:
   push:
+    branches:
+      - prototype/personal-component-library
+      - feature/pcl-p0-p2-2026-11-15
+    paths:
+      - 'builds/2026-11-15-component-library/**'
+      - '.github/workflows/component-library-p0.yml'
+  pull_request:
     branches:
       - prototype/personal-component-library
     paths:
@@ -8,7 +15,7 @@ on:
       - '.github/workflows/component-library-p0.yml'
   workflow_dispatch:
 jobs:
-  p0:
+  verify:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -20,9 +27,21 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install
+      - name: Install dependencies
         run: npm install --no-audit --no-fund
       - name: Build and typecheck
         run: npm run build
-      - name: Unit tests
+      - name: Execute unit and source tests
         run: npm test
+      - name: Verify generated decks
+        run: |
+          test -f public/decks/pitch-inspired/sonic-launch.html
+          test -f public/decks/pitch-inspired/editorial.html
+          test -f public/r/pcl-brandaily-workflows.json
+          test -f public/r/pcl-deck-presentation.json
+      - name: Upload isolated preview build
+        uses: actions/upload-artifact@v4
+        with:
+          name: personal-component-library-preview
+          path: builds/2026-11-15-component-library/dist/
+          if-no-files-found: error
