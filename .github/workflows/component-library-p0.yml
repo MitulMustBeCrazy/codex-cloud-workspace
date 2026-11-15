@@ -1,0 +1,28 @@
+name: Component Library P0 QA
+on:
+  push:
+    branches:
+      - prototype/personal-component-library
+    paths:
+      - 'builds/2026-11-15-component-library/**'
+      - '.github/workflows/component-library-p0.yml'
+  workflow_dispatch:
+jobs:
+  p0:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: builds/2026-11-15-component-library
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Node
+        uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - name: Install
+        run: npm install --no-audit --no-fund
+      - name: Build and typecheck
+        run: npm run build
+      - name: Unit tests
+        run: npm test
