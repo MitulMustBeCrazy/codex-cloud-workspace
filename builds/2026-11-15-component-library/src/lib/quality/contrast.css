@@ -82,3 +82,53 @@
 .app-shell .pcl-today .pcl-task__meta .pcl-priority--medium{color:#684513!important;}
 .app-shell .pcl-workbench button:focus-visible,.app-shell .pcl-workbench textarea:focus-visible {outline:3px solid #3c7488;outline-offset:3px;}
 @media(max-width:550px){.app-shell .pcl-workbench .pcl-calendar__event{font-size:9px!important;}}
+
+/* P1/P2 productivity and gallery contrast remediation, plus readable metadata. */
+.app-shell .pcl-advanced-workbench > .pcl-eyebrow,
+.app-shell .pcl-advanced-workbench > p,
+.app-shell .pcl-advanced-workbench .pcl-panel__head > span,
+.app-shell .pcl-advanced-workbench .pcl-view-list__row small,
+.app-shell .pcl-advanced-workbench .pcl-view-form label,
+.app-shell .pcl-advanced-workbench .pcl-notifications small,
+.app-shell .pcl-advanced-workbench .pcl-notifications .pcl-quiet,
+.app-shell .pcl-advanced-workbench .pcl-cohort th,
+.app-shell .pcl-advanced-workbench .pcl-funnel__row span,
+.app-shell .pcl-advanced-workbench .pcl-waterfall__col small,
+.app-shell .pcl-advanced-workbench .pcl-command__search button,
+.app-shell .pcl-advanced-workbench .pcl-command li small,
+.app-shell .pcl-advanced-workbench .pcl-command kbd,
+.app-shell .pcl-advanced-workbench .pcl-view-list__row > button:first-child,
+.app-shell .pcl-advanced-workbench .pcl-empty,
+.app-shell .pcl-advanced-workbench .pcl-advanced-status,
+.app-shell .pcl-advanced-workbench .pcl-quiet,
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__count,
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__filters button:not(.is-active),
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__toolbar button,
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__eyebrow,
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__info p,
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__info small,
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__info code,
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__actions button,
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__status,
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__empty {
+ color:#344954!important;
+}
+.app-shell .pcl-advanced-workbench .pcl-command__search button,
+.app-shell .pcl-advanced-workbench .pcl-quiet,
+.app-shell .pcl-advanced-workbench .pcl-view-form input,
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__actions button {
+ background:#eef3f4!important;
+}
+.app-shell .pcl-advanced-workbench .pcl-command li[data-selected=true] button {
+ background:#dcecf0!important;
+}
+.app-shell .pcl-advanced-workbench .pcl-view-list__row small,
+.app-shell .pcl-advanced-workbench .pcl-notifications small,
+.app-shell .pcl-advanced-workbench .pcl-cohort th,
+.app-shell .pcl-advanced-workbench .pcl-waterfall__col small,
+.app-shell .pcl-advanced-workbench .pcl-command li small,
+.app-shell .pcl-deck-gallery .pcl-deck-gallery__info small {
+ font-size:11px!important;
+}
+.app-shell .pcl-advanced-workbench .pcl-backdrop .pcl-backdrop__wave,
+.app-shell .pcl-advanced-workbench .pcl-advanced-visual > span {color:#344954}
