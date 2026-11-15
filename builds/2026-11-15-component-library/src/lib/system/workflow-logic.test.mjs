@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { calendarMonth, calendarQuarter, calendarYear, calendarWeek, calendarDay, findMentionQuery, insertMention, filterAndSort, summarizeCampaigns, normalizeSeries, interpolateSeries } from "./workflow-logic.js";
+import { calendarMonth, calendarQuarter, calendarYear, calendarWeek, calendarDay, findMentionQuery, insertMention, filterAndSort, summarizeCampaigns, normalizeSeries, interpolateSeries, reconcileMentionReferences } from "./workflow-logic.js";
 
 test("calendar month renders 42 Monday-first days without off-by-one timezone shift", () => {
   const month = calendarMonth("2026-11-15");
@@ -51,4 +51,20 @@ test("chart interpolation honors reduced motion / step zero",()=>{
   assert.deepEqual(interpolateSeries([10,20],0),[0,0]);
   assert.deepEqual(interpolateSeries([10,20],0.5),[5,10]);
   assert.deepEqual(interpolateSeries([10,20],1),[10,20]);
+});
+
+test("mention references retain entity identity when text is inserted before them",()=>{
+ const old="Meet @Mariam for $Launch";
+ const refs=[{id:"p",type:"person",label:"Mariam",display:"@Mariam",start:5,end:12},
+             {id:"c",type:"campaign",label:"Launch",display:"$Launch",start:17,end:24}];
+ const next=reconcileMentionReferences(old,"Tomorrow: "+old,refs);
+ assert.equal(next.length,2);
+ assert.equal(next[0].start,15);
+ assert.equal(next[1].start,27);
+ assert.equal(next[0].id,"p");
+});
+test("mention identity is revoked when its display text is edited",()=>{
+ const old="Meet @Mariam";
+ const refs=[{id:"p",type:"person",label:"Mariam",display:"@Mariam",start:5,end:12}];
+ assert.deepEqual(reconcileMentionReferences(old,"Meet @Maria",refs),[]);
 });
