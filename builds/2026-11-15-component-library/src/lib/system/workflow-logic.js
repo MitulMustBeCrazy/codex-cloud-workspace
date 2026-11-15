@@ -86,3 +86,23 @@ export function interpolateSeries(values,progress){
   const pct=Math.min(1,Math.max(0,Number(progress)||0));
   return values.map(v=>typeof v==="number"&&Number.isFinite(v)?v*pct:null);
 }
+
+/** Preserve structured mention identity across edits outside the mention span. */
+export function reconcileMentionReferences(before,after,references=[]){
+  let common=0;
+  while(common<Math.min(before.length,after.length)&&before[common]===after[common])common++;
+  let suffix=0;
+  while(suffix<before.length-common&&suffix<after.length-common&&
+    before[before.length-1-suffix]===after[after.length-1-suffix])suffix++;
+  const removedEnd=before.length-suffix;
+  const insertedEnd=after.length-suffix;
+  const delta=insertedEnd-removedEnd;
+  return references.flatMap(ref=>{
+    if(ref.end<=common){return after.slice(ref.start,ref.end)===ref.display?[ref]:[]}
+    if(ref.start>=removedEnd){
+      const shifted={...ref,start:ref.start+delta,end:ref.end+delta};
+      return after.slice(shifted.start,shifted.end)===shifted.display?[shifted]:[];
+    }
+    return [];
+  });
+}
