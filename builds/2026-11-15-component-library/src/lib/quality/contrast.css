@@ -1,0 +1,84 @@
+/* A11y audit contrast repairs, November 2026.
+   Scoped to gallery and demos: no modifications to live Brandaily.
+   Secondary text stays a subdued slate but meets high contrast on light surfaces. */
+.app-shell .brand small,
+.app-shell .sidebar-label,
+.app-shell .sidebar-bottom,
+.app-shell .sidebar-bottom small,
+.app-shell .topbar-meta,
+.app-shell .sidebar .nav-item:not(.active),
+.app-shell .breadcrumb,
+.app-shell .eyebrow,
+.app-shell .micro.muted,
+.app-shell .muted,
+.app-shell .page-intro,
+.app-shell .hero-row p,
+.app-shell .result-line span,
+.app-shell .component-details p,
+.app-shell .component-details .muted,
+.app-shell .footer,
+.app-shell .selection-note span,
+.app-shell .style-info p,
+.app-shell .style-info small,
+.app-shell .pcl-workbench__intro p,
+.app-shell .pcl-workbench__composer p,
+.app-shell .pcl-workbench .pcl-eyebrow,
+.app-shell .pcl-workbench .pcl-muted,
+.app-shell .pcl-workbench__status,
+.app-shell .pcl-workbench__refs,
+.app-shell .pcl-workbench .pcl-count,
+.app-shell .pcl-workbench .pcl-calendar__foot,
+.app-shell .pcl-workbench .pcl-workflow__summary,
+.app-shell .pcl-workbench .pcl-workflow__meta,
+.app-shell .pcl-workbench .pcl-calendar__weekday,
+.app-shell .pcl-workbench .pcl-calendar__day,
+.app-shell .pcl-workbench .pcl-calendar__month b,
+.app-shell .pcl-workbench .pcl-calendar__month span,
+.app-shell .pcl-workbench .pcl-calendar__month span:last-child,
+.app-shell .pcl-workbench .pcl-comms__body small,
+.app-shell .pcl-workbench .pcl-comms__meta,
+.app-shell .pcl-workbench .pcl-comms__meta small,
+.app-shell .pcl-workbench .pcl-composer__footer,
+.app-shell .pcl-workbench .pcl-field-label,
+.app-shell .pcl-workbench .pcl-search-label,
+.app-shell .pcl-workbench .pcl-explorer th,
+.app-shell .pcl-workbench .pcl-mention-suggestions button small,
+.app-shell .pcl-workbench .pcl-panel-header .pcl-eyebrow,
+.app-shell .pcl-workbench .pcl-segments button:not(.is-active),
+.app-shell .pcl-workbench .pcl-calendar__nav,
+.app-shell .pcl-workbench .pcl-comms__meta em,
+.app-shell .pcl-metric .pcl-metric__top,
+.app-shell .pcl-metric .pcl-metric__top small,
+.app-shell .pcl-metric .pcl-metric__bottom,
+.app-shell .pcl-metric .pcl-metric__comparison,
+.app-shell .pcl-today .pcl-today__eyebrow,
+.app-shell .pcl-today .pcl-today__count,
+.app-shell .pcl-today .pcl-task__meta,
+.app-shell .pcl-today .pcl-task__meta span,
+.app-shell .pcl-today .pcl-task--done .pcl-task__title,
+.app-shell .pcl-today .pcl-task__actions button,
+.app-shell .pcl-workbench .pcl-workflow__actions button,
+.app-shell .pcl-workbench .pcl-calendar__event,
+.app-shell .pcl-workbench .pcl-calendar__event span,
+.app-shell .pcl-workbench .pcl-workflow__actions .pcl-button-quiet {
+  color:#3e4e57!important;
+}
+.app-shell .pcl-workbench .pcl-calendar__cell.is-outside { opacity:1!important; background:#f0f3f3!important; }
+.app-shell .pcl-workbench .pcl-calendar__cell.is-outside .pcl-calendar__event { background:#dce7eb!important; }
+.app-shell .pcl-workbench .pcl-calendar__event { background:#dcecf0; }
+.app-shell .pcl-workbench .pcl-segments button:not(.is-active) { background:#e9eff0; }
+.app-shell .pcl-workbench .pcl-comms__meta em { background:#d3e3e7; }
+.app-shell .pcl-workbench .pcl-count,.app-shell .pcl-today .pcl-today__count{background:#e7f0f2}
+.app-shell .pcl-workbench .pcl-workflow__meta,
+.app-shell .pcl-workbench .pcl-workflow__summary,
+.app-shell .pcl-workbench .pcl-calendar__weekday,
+.app-shell .pcl-workbench .pcl-calendar__foot,
+.app-shell .pcl-workbench .pcl-composer__footer {font-size:11px!important}
+.app-shell .pcl-workbench .pcl-calendar__event{font-size:10px!important;font-weight:600}
+.app-shell .pcl-workbench .pcl-calendar__day{font-size:12px!important}
+.app-shell .pcl-workbench .pcl-mention-suggestions .pcl-mention-sigil{color:#254756!important}
+.app-shell .pcl-workbench .pcl-workflow__actions .pcl-label--danger{color:#8b3024!important;}
+.app-shell .pcl-today .pcl-task__meta .pcl-priority--high{color:#8a342b!important;}
+.app-shell .pcl-today .pcl-task__meta .pcl-priority--medium{color:#684513!important;}
+.app-shell .pcl-workbench button:focus-visible,.app-shell .pcl-workbench textarea:focus-visible {outline:3px solid #3c7488;outline-offset:3px;}
+@media(max-width:550px){.app-shell .pcl-workbench .pcl-calendar__event{font-size:9px!important;}}
