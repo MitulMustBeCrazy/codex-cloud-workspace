@@ -49,7 +49,7 @@ export function InlineMentionsComposer({value,onChange,entities,placeholder="Wri
     <textarea id="pcl-mention-editor" ref={input} value={value.text} onChange={update}
       onKeyDown={key} onClick={ev=>{setCaret(ev.currentTarget.selectionStart);setDismissed(false)}}
       onKeyUp={ev=>{setCaret(ev.currentTarget.selectionStart)}} placeholder={placeholder} rows={3}
-      aria-autocomplete="list" aria-expanded={suggestions.length>0} aria-controls="pcl-mention-suggestions" />
+      role="combobox" aria-autocomplete="list" aria-haspopup="listbox" aria-expanded={suggestions.length>0} aria-controls="pcl-mention-suggestions" />
     {suggestions.length>0&&<div className="pcl-mention-suggestions" id="pcl-mention-suggestions" role="listbox" aria-label="Inline mentions">
       {suggestions.map((entity,index)=><button type="button" role="option" aria-selected={activeIndex===index} key={entity.type+entity.id}
         onMouseDown={ev=>ev.preventDefault()} onClick={()=>select(entity)}>
@@ -88,7 +88,7 @@ export function CalendarPanel({view="Month",date="2026-11-15",events=[],onViewCh
     </div> : <div className={"pcl-calendar__days pcl-calendar__days--"+view.toLowerCase()}>
       {view!=="Day"&&days.map(day=><div key={day} className="pcl-calendar__weekday">{day}</div>)}
       {cells.map((cell:any)=>{const items=lookup(cell.date);return <div key={cell.date} className={"pcl-calendar__cell"+(!cell.withinPeriod?" is-outside":"")}>
-        <button type="button" className="pcl-calendar__day" onClick={()=>onDateChange?.(cell.date)} aria-label={"View "+cell.date}>{cell.day}</button>
+        <button type="button" className="pcl-calendar__day" onClick={()=>onDateChange?.(cell.date)} aria-label={"View day "+cell.day+" ("+cell.date+")"}>{cell.day}</button>
         {items.slice(0,view==="Month"?2:8).map(e=><button type="button" key={e.id} className="pcl-calendar__event" title={e.title}
           onClick={()=>onEventClick?.(e.id)}>{e.time&&<span>{e.time} </span>}{e.title}</button>)}
         {items.length>(view==="Month"?2:8)&&<small>+{items.length-(view==="Month"?2:8)} more</small>}
