@@ -1,4 +1,4 @@
-import { readFile, mkdir, writeFile, mkdtemp, rm } from "node:fs/promises";
+import { readFile, mkdir, writeFile, mkdtemp, rm, cp } from "node:fs/promises";
 import { resolve, dirname, join, posix, extname } from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
 import { build } from "vite";
@@ -78,7 +78,7 @@ function makeEntry(items,context){
  ].join("\n");
 }
 
-async function buildConsumer(items,context){
+async function buildConsumer(items,context,publish=false){
  if(!["dashboard","deck"].includes(context))throw new Error("Unknown consumer context "+context);
  const temp=await mkdtemp(join(root,".consumer-"+context+"-"));
  try{
@@ -93,21 +93,29 @@ async function buildConsumer(items,context){
   await writeFile(join(temp,"main.tsx"),makeEntry(items,context));
   await writeFile(join(temp,"styles.css"),'@import "tailwindcss";\n@source "./vendor";\nbody{margin:0;font-family:Inter,system-ui,sans-serif;background:#f8fafb;color:#1f2937}\nmain{padding:24px;min-height:100vh}nav{display:flex;flex-wrap:wrap;gap:8px;margin:20px 0}button{border:1px solid #9ca3af;background:white;color:#111827;padding:9px;border-radius:7px;cursor:pointer}button[aria-pressed=true]{border-color:#111827;background:#e5e7eb}section{min-height:280px;overflow:hidden} .consumer-deck section{aspect-ratio:16/9;background:#252932;padding:35px;color:#fff}header span{font-size:10px;letter-spacing:.12em}\n');
   await build({root:temp,configFile:false,plugins:[react(),tailwindcss()],base:"./",logLevel:"error",build:{outDir:join(temp,"dist"),emptyOutDir:true}});
-  return {context,components:items.length,built:true};
+  if(publish){
+   const target=join(root,"public","consumers",context);
+   await rm(target,{recursive:true,force:true});
+   await mkdir(dirname(target),{recursive:true});
+   await cp(join(temp,"dist"),target,{recursive:true});
+  }
+  return {context,components:items.length,built:true,published:publish};
  }finally{await rm(temp,{recursive:true,force:true})}
 }
 
-export async function verifyConsumerInstall(contexts=["dashboard","deck"]){
+export async function verifyConsumerInstall(contexts=["dashboard","deck"],publish=false){
  const items=await loadItems();
  const results=[];
- for(const context of contexts)results.push(await buildConsumer(items,context));
+ for(const context of contexts)results.push(await buildConsumer(items,context,publish));
  return results;
 }
 const invoked=process.argv[1]&&pathToFileURL(resolve(process.argv[1])).href===import.meta.url;
 if(invoked){
  const args=process.argv.slice(2);
+ const publish=args.includes("--publish");
+ const contexts=args.filter(arg=>arg!=="--publish");
  try{
-  const results=await verifyConsumerInstall(args.length?args:["dashboard","deck"]);
+  const results=await verifyConsumerInstall(contexts.length?contexts:["dashboard","deck"],publish);
   console.log("Independent consumer builds verified: "+JSON.stringify(results));
  }catch(e){console.error(e);process.exitCode=1}
 }
