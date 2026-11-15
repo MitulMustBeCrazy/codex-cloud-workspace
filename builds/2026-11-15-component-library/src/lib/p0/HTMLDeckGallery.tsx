@@ -47,7 +47,7 @@ export function HTMLDeckGallery(){
   <div className="pcl-deck-gallery__grid">
    {results.map(d=><article key={d.id} className="pcl-deck-gallery__card">
     <div className="pcl-deck-gallery__preview" style={{background:d.colors.background,color:d.colors.foreground}}>
-      <span style={{color:d.colors.accent}}>ORIGINAL HTML / NARRATIVE STUDY</span>
+      <span style={{color:d.colors.foreground}}>ORIGINAL HTML / NARRATIVE STUDY</span>
       <strong>{d.headline}</strong><i style={{background:d.colors.accent}}/>
     </div>
     <div className="pcl-deck-gallery__info">
