@@ -179,7 +179,7 @@ export function BrandailyWorkbench(){
    <div className="pcl-workbench__intro"><span className="pcl-eyebrow">BRANDAILY / REUSABLE P0 BLOCKS</span><h1>Less noise.<br/><em>More clarity.</em></h1><p>Calendar, task delegation, communication, approvals, analytics and inline mentions, all demonstrated with local fixture data.</p></div>
    <div className="pcl-workbench__metrics">
      <P0MetricCard label="Campaign reach" value={2480000} period="Last 30 days" trend={{value:18.6,direction:"up",positiveWhen:"up"}}/>
-     <P0MetricCard label="Cost per qualified action" value={415.5} prefix="৳" trend={{value:8.2,direction:"down",positiveWhen:"down"}}/>
+     <P0MetricCard label="Cost per qualified action" value={415.5} prefix="BDT " trend={{value:8.2,direction:"down",positiveWhen:"down"}}/>
      <P0MetricCard label="Approved assets" value={87} suffix="%" trend={{value:2,direction:"up",positiveWhen:"up"}}/>
    </div>
    <div className="pcl-workbench__grid">
