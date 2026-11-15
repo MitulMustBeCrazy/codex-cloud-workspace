@@ -389,3 +389,8 @@
 .qc-shell .qc-feature-tile{color:var(--qc-ink)}
 .qc-shell[data-theme=light] .qc-hero-panel,.qc-shell[data-theme=light] .qc-feature-tile{background-color:#F2EFEB}
 .qc-shell[data-theme=light] .qc-feature-work-art>div:first-child b{color:#333031}
+
+/* Contrast on accent actions and the small collection counts. */
+.qc-shell .pcl-deck-gallery__actions a{color:#fff!important;background:#A72536!important}
+.qc-shell .qc-tile-bottom h3 span{color:color-mix(in srgb,var(--qc-accent) 66%,var(--qc-ink))!important}
+.qc-shell .qc-feature-tile{text-decoration:none}
