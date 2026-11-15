@@ -22,7 +22,7 @@ function demoProps(item: MotionEntry): Record<string, unknown> {
     "rotating-text": { texts: ["Explore", "Create", "Beyond"] },
     "wave-text": { text: "The next chapter" },
     "magnetic-button": { children: "Explore possibility" },
-    "pill-tabs": { tabs: ["Discover", "Build", "Review"] },
+
   };
   return props[item.slug] || {};
 }
@@ -135,7 +135,7 @@ export function MotionBrewGallery({initialQuery=""}:{initialQuery?:string}) {
           <button type="button" onClick={()=>copy("Use the imported MotionBrew component "+chosen.slug+" ("+chosen.name+") with reduced-motion and responsive support.","Chat prompt")}>Copy chat prompt</button>
           <button type="button" aria-pressed={favorites.has(chosen.slug)} onClick={()=>setFavorites(prev=>{const next=new Set(prev);next.has(chosen.slug)?next.delete(chosen.slug):next.add(chosen.slug);return next})}>{favorites.has(chosen.slug)?"★ Saved":"☆ Save"}</button>
         </div>
-        <p className="mb-review-status" role="status">{copied||"Source availability does not establish independently verified preview or consumer integration."}</p>
+        <p className="mb-review-status" role="status">{copied||"Default preview mounted in Chromium. Individual interactions and consumer installation still require their own verification."}</p>
       </section>
     </div>}
   </section>;
