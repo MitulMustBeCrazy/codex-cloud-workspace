@@ -12,7 +12,7 @@ for(const context of ["dashboard","deck"]){
   test.setTimeout(100000);
   const pageErrors:string[]=[];
   page.on("pageerror",error=>pageErrors.push(error.message));
-  await page.goto("/consumers/"+context+"/");
+  await page.goto("/consumers/"+context+"/index.html");
   await expect(page.getByRole("heading",{name:context==="deck"?"Presentation consumer":"Dashboard consumer"})).toBeVisible();
   await expect(page.locator('nav[aria-label="Components to test"] button')).toHaveCount(16);
   for(const slug of slugs){
@@ -30,7 +30,7 @@ for(const context of ["dashboard","deck"]){
 test("isolated deck component consumer remains usable with reduced motion and narrow viewport",async({page})=>{
  await page.setViewportSize({width:390,height:844});
  await page.emulateMedia({reducedMotion:"reduce"});
- await page.goto("/consumers/deck/");
+ await page.goto("/consumers/deck/index.html");
  await expect(page.locator('nav[aria-label="Components to test"] button')).toHaveCount(16);
  await page.locator('button[data-component="wave-text"]').click();
  await expect(page.locator('section[data-active="wave-text"]')).toBeVisible();
