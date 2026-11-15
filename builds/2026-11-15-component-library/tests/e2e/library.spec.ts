@@ -27,7 +27,7 @@ test("P1/P2 command palette, advanced analytics and motion options render",async
  await page.keyboard.press("Control+k");
  await expect(page.getByRole("dialog",{name:"Command palette"})).toBeVisible();
  await page.getByRole("searchbox",{name:"Search commands"}).fill("campaigns");
- await expect(page.getByText("Campaigns",{exact:true})).toBeVisible();
+ await expect(page.getByRole("option",{name:/Campaigns/})).toBeVisible();
  await page.keyboard.press("Escape");
  await expect(page.getByRole("dialog",{name:"Command palette"})).toHaveCount(0);
  await expect(page.getByRole("region",{name:"Cohort heatmap"})).toBeVisible();
