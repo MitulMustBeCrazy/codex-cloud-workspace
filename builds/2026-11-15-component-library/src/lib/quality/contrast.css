@@ -132,3 +132,12 @@
 }
 .app-shell .pcl-advanced-workbench .pcl-backdrop .pcl-backdrop__wave,
 .app-shell .pcl-advanced-workbench .pcl-advanced-visual > span {color:#344954}
+
+/* Heatmap cells retain readable ink at high-intensity data values. */
+.app-shell .pcl-advanced-workbench .pcl-cohort td {
+ color:#0b242b!important;
+ font-weight:750;
+}
+.app-shell .pcl-advanced-workbench .pcl-advanced-visual--dark > span {
+ color:#e4eef1!important;
+}
