@@ -59,12 +59,12 @@ export function TodayTaskCard({
                 </span>
               </label>
               <div className="pcl-task__actions">
-                {onAssign && <button type="button" onClick={() => onAssign(task.id)} aria-label={"Assign " + task.title}>Assign</button>}
+                {onAssign && <button type="button" onClick={() => onAssign?.(task.id)} aria-label={"Assign " + task.title}>Assign</button>}
                 {onPromote && <details className="pcl-task__promote">
                   <summary aria-label={"Promote " + task.title}>Promote</summary>
                   <div className="pcl-task__promotion-choices">
                     {(["task", "project", "campaign"] as const).map((target) =>
-                      <button type="button" key={target} onClick={() => onPromote(task.id, target)}>To {target}</button>)}
+                      <button type="button" key={target} onClick={() => onPromote?.(task.id, target)}>To {target}</button>)}
                   </div>
                 </details>}
               </div>
