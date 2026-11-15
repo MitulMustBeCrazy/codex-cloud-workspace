@@ -7,6 +7,7 @@
 **Canonical Cloudflare deployment:** `a3e5231d-8327-46ec-a9f8-2373675a8d35`
 **A+B preview:** https://pcl-gallery-reuse-review.pages.dev/
 **P4 code:** `feature/pcl-p4-release-hardening-2026-11-16` and PR #5
+**Dedicated P4 review target:** https://pcl-p4-release-review.pages.dev/ (verify deployment/commit before confirming live)
 
 ## Required release-quality checks
 
