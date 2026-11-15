@@ -17,6 +17,7 @@ test("MotionBrew catalog lists all 100 components and supports filtered live pre
 test("MotionBrew gallery supports engine/category filters and reduced viewport",async({page})=>{
   await page.setViewportSize({width:390,height:844});
   await page.goto("/");
+ await page.getByRole("button",{name:"Open navigation"}).click();
   await page.getByRole("button",{name:"MotionBrew 100"}).click();
   await page.getByLabel("Animation engine").selectOption("Motion + GSAP");
   await expect(page.locator(".mb-component-card").first()).toBeVisible();
