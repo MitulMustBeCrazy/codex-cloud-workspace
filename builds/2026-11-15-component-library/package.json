@@ -6,7 +6,8 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc --noEmit && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "node --test src/lib/p0/p0.test.cjs templates/pitch-inspired/deck-core.test.cjs"
   },
   "dependencies": {
     "react": "^19.2.0",
