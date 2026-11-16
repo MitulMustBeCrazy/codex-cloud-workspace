@@ -14,6 +14,13 @@ test.describe("Design integration live controls",()=>{
   await page.getByRole("button",{name:/Run demo action/}).click();
   await expect(page.getByText(/Demo action completed/)).toBeVisible();
  });
+ test("loads the published Astryx component bundle inside the isolated frame",async({page})=>{
+  const specimen=page.frameLocator('iframe[title="Live Astryx component specimen"]');
+  await expect(specimen.getByRole("heading",{name:"Actual Astryx components"})).toBeVisible({timeout:30000});
+  await expect(specimen.getByText("Upstream bundle loaded.")).toBeVisible();
+  await specimen.getByRole("button",{name:"Increment count"}).click();
+  await expect(specimen.getByText("Interactions: 1")).toBeVisible();
+ });
  test("runs QA checklist and changes style tokens",async({page})=>{
   await page.getByRole("button",{name:"Design QA"}).click();
   await expect(page.getByText("2 / 5")).toBeVisible();
