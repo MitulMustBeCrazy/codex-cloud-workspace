@@ -1,0 +1,143 @@
+/* A11y audit contrast repairs, November 2026.
+   Scoped to gallery and demos: no modifications to live Brandaily.
+   Secondary text stays a subdued slate but meets high contrast on light surfaces. */
+.qc-shell .brand small,
+.qc-shell .sidebar-label,
+.qc-shell .sidebar-bottom,
+.qc-shell .sidebar-bottom small,
+.qc-shell .topbar-meta,
+.qc-shell .sidebar .nav-item:not(.active),
+.qc-shell .breadcrumb,
+.qc-shell .eyebrow,
+.qc-shell .micro.muted,
+.qc-shell .muted,
+.qc-shell .page-intro,
+.qc-shell .hero-row p,
+.qc-shell .result-line span,
+.qc-shell .component-details p,
+.qc-shell .component-details .muted,
+.qc-shell .footer,
+.qc-shell .selection-note span,
+.qc-shell .style-info p,
+.qc-shell .style-info small,
+.qc-shell .pcl-workbench__intro p,
+.qc-shell .pcl-workbench__composer p,
+.qc-shell .pcl-workbench .pcl-eyebrow,
+.qc-shell .pcl-workbench .pcl-muted,
+.qc-shell .pcl-workbench__status,
+.qc-shell .pcl-workbench__refs,
+.qc-shell .pcl-workbench .pcl-count,
+.qc-shell .pcl-workbench .pcl-calendar__foot,
+.qc-shell .pcl-workbench .pcl-workflow__summary,
+.qc-shell .pcl-workbench .pcl-workflow__meta,
+.qc-shell .pcl-workbench .pcl-calendar__weekday,
+.qc-shell .pcl-workbench .pcl-calendar__day,
+.qc-shell .pcl-workbench .pcl-calendar__month b,
+.qc-shell .pcl-workbench .pcl-calendar__month span,
+.qc-shell .pcl-workbench .pcl-calendar__month span:last-child,
+.qc-shell .pcl-workbench .pcl-comms__body small,
+.qc-shell .pcl-workbench .pcl-comms__meta,
+.qc-shell .pcl-workbench .pcl-comms__meta small,
+.qc-shell .pcl-workbench .pcl-composer__footer,
+.qc-shell .pcl-workbench .pcl-field-label,
+.qc-shell .pcl-workbench .pcl-search-label,
+.qc-shell .pcl-workbench .pcl-explorer th,
+.qc-shell .pcl-workbench .pcl-mention-suggestions button small,
+.qc-shell .pcl-workbench .pcl-panel-header .pcl-eyebrow,
+.qc-shell .pcl-workbench .pcl-segments button:not(.is-active),
+.qc-shell .pcl-workbench .pcl-calendar__nav,
+.qc-shell .pcl-workbench .pcl-comms__meta em,
+.qc-shell .pcl-metric .pcl-metric__top,
+.qc-shell .pcl-metric .pcl-metric__top small,
+.qc-shell .pcl-metric .pcl-metric__bottom,
+.qc-shell .pcl-metric .pcl-metric__comparison,
+.qc-shell .pcl-today .pcl-today__eyebrow,
+.qc-shell .pcl-today .pcl-today__count,
+.qc-shell .pcl-today .pcl-task__meta,
+.qc-shell .pcl-today .pcl-task__meta span,
+.qc-shell .pcl-today .pcl-task--done .pcl-task__title,
+.qc-shell .pcl-today .pcl-task__actions button,
+.qc-shell .pcl-workbench .pcl-workflow__actions button,
+.qc-shell .pcl-workbench .pcl-calendar__event,
+.qc-shell .pcl-workbench .pcl-calendar__event span,
+.qc-shell .pcl-workbench .pcl-workflow__actions .pcl-button-quiet {
+  color:#3e4e57!important;
+}
+.qc-shell .pcl-workbench .pcl-calendar__cell.is-outside { opacity:1!important; background:#f0f3f3!important; }
+.qc-shell .pcl-workbench .pcl-calendar__cell.is-outside .pcl-calendar__event { background:#dce7eb!important; }
+.qc-shell .pcl-workbench .pcl-calendar__event { background:#dcecf0; }
+.qc-shell .pcl-workbench .pcl-segments button:not(.is-active) { background:#e9eff0; }
+.qc-shell .pcl-workbench .pcl-comms__meta em { background:#d3e3e7; }
+.qc-shell .pcl-workbench .pcl-count,.qc-shell .pcl-today .pcl-today__count{background:#e7f0f2}
+.qc-shell .pcl-workbench .pcl-workflow__meta,
+.qc-shell .pcl-workbench .pcl-workflow__summary,
+.qc-shell .pcl-workbench .pcl-calendar__weekday,
+.qc-shell .pcl-workbench .pcl-calendar__foot,
+.qc-shell .pcl-workbench .pcl-composer__footer {font-size:11px!important}
+.qc-shell .pcl-workbench .pcl-calendar__event{font-size:10px!important;font-weight:600}
+.qc-shell .pcl-workbench .pcl-calendar__day{font-size:12px!important}
+.qc-shell .pcl-workbench .pcl-mention-suggestions .pcl-mention-sigil{color:#254756!important}
+.qc-shell .pcl-workbench .pcl-workflow__actions .pcl-label--danger{color:#8b3024!important;}
+.qc-shell .pcl-today .pcl-task__meta .pcl-priority--high{color:#8a342b!important;}
+.qc-shell .pcl-today .pcl-task__meta .pcl-priority--medium{color:#684513!important;}
+.qc-shell .pcl-workbench button:focus-visible,.qc-shell .pcl-workbench textarea:focus-visible {outline:3px solid #3c7488;outline-offset:3px;}
+@media(max-width:550px){.qc-shell .pcl-workbench .pcl-calendar__event{font-size:9px!important;}}
+
+/* P1/P2 productivity and gallery contrast remediation, plus readable metadata. */
+.qc-shell .pcl-advanced-workbench > .pcl-eyebrow,
+.qc-shell .pcl-advanced-workbench > p,
+.qc-shell .pcl-advanced-workbench .pcl-panel__head > span,
+.qc-shell .pcl-advanced-workbench .pcl-view-list__row small,
+.qc-shell .pcl-advanced-workbench .pcl-view-form label,
+.qc-shell .pcl-advanced-workbench .pcl-notifications small,
+.qc-shell .pcl-advanced-workbench .pcl-notifications .pcl-quiet,
+.qc-shell .pcl-advanced-workbench .pcl-cohort th,
+.qc-shell .pcl-advanced-workbench .pcl-funnel__row span,
+.qc-shell .pcl-advanced-workbench .pcl-waterfall__col small,
+.qc-shell .pcl-advanced-workbench .pcl-command__search button,
+.qc-shell .pcl-advanced-workbench .pcl-command li small,
+.qc-shell .pcl-advanced-workbench .pcl-command kbd,
+.qc-shell .pcl-advanced-workbench .pcl-view-list__row > button:first-child,
+.qc-shell .pcl-advanced-workbench .pcl-empty,
+.qc-shell .pcl-advanced-workbench .pcl-advanced-status,
+.qc-shell .pcl-advanced-workbench .pcl-quiet,
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__count,
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__filters button:not(.is-active),
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__toolbar button,
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__eyebrow,
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__info p,
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__info small,
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__info code,
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__actions button,
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__status,
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__empty {
+ color:#344954!important;
+}
+.qc-shell .pcl-advanced-workbench .pcl-command__search button,
+.qc-shell .pcl-advanced-workbench .pcl-quiet,
+.qc-shell .pcl-advanced-workbench .pcl-view-form input,
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__actions button {
+ background:#eef3f4!important;
+}
+.qc-shell .pcl-advanced-workbench .pcl-command li[data-selected=true] button {
+ background:#dcecf0!important;
+}
+.qc-shell .pcl-advanced-workbench .pcl-view-list__row small,
+.qc-shell .pcl-advanced-workbench .pcl-notifications small,
+.qc-shell .pcl-advanced-workbench .pcl-cohort th,
+.qc-shell .pcl-advanced-workbench .pcl-waterfall__col small,
+.qc-shell .pcl-advanced-workbench .pcl-command li small,
+.qc-shell .pcl-deck-gallery .pcl-deck-gallery__info small {
+ font-size:11px!important;
+}
+.qc-shell .pcl-advanced-workbench .pcl-backdrop .pcl-backdrop__wave,
+.qc-shell .pcl-advanced-workbench .pcl-advanced-visual > span {color:#344954}
+
+/* Heatmap cells retain readable ink at high-intensity data values. */
+.qc-shell .pcl-advanced-workbench .pcl-cohort td {
+ color:#0b242b!important;
+ font-weight:750;
+}
+.qc-shell .pcl-advanced-workbench .pcl-advanced-visual--dark > span {
+ color:#e4eef1!important;
+}

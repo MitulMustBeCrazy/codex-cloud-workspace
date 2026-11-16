@@ -1,0 +1,1385 @@
+{
+  "version": 1,
+  "source": "MotionBrew",
+  "sourceCount": 100,
+  "components": [
+    {
+      "slug": "account-menu",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "action-menu",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "activity-grid",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "add-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "amount-slider",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "annotation-text",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "aura-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "auth-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "avatar-testimonial",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "backspace-text",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "bell-toggle",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "bill-list",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "binary-text",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "blur-accordion",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "blur-text",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "booking-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "brand-bridge",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "calendar-agenda",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "channel-mix",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "column-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "contact-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "context-menu",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "contour-feature-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "contour-lines",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "decay-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "deploy-streak",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "depth-carousel",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "device-traffic",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "download-button",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "duo-flip",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "event-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "file-drop",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "flip-words",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "flux-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "fuse-button",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "globe-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [
+        "WebGL-capable browser"
+      ],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "high",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "goal-gauge",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "gradient-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "gradient-text",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "gravity-tag-pile",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "growth-stream",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "highlight-text",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "hold-to-confirm",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "infinite-gallery",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "integration-hub",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "liquid-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "liquid-metal-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "liquid-tabs",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "magnetic-button",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "magnetic-flow",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "message-composer",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "metal-card-stack",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "metric-split",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "mix-chart",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "month-calendar",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "morph-search",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "orbit-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "otp-code",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "particle-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "payment-form",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "pill-tabs",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "pixel-blast",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "pixel-feature-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "pixel-scroll",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "pricing-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "prism-carousel",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "prism-flow",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "privacy-banner",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "profile-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "profile-menu",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "project-index",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "prompt-input",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "quota-gauge",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "range-chart",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "reaction-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "recap-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "receipt-button",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "ribbon-gallery",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "roadmap-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "rolling-card-stack",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "rolling-stepper",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "rotating-text",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "score-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "search-modal",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "shimmer-text",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "sidebar-nav",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "slide-commit",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "spatial-gallery",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "spending-meter",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "tab-bar",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "team-member-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "team-morph",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "tilt-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "tilt-carousel",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "web-deck",
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "toast-stack",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "usage-ring",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "verify-flow",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "voice-prompt",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "wallet-card",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": false,
+      "useCases": [
+        "dashboard",
+        "web-deck"
+      ],
+      "motionCost": "unknown",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    },
+    {
+      "slug": "wave-text",
+      "status": "fixture-ready",
+      "fixture": "provider-defaults",
+      "needs": [],
+      "notes": "This gallery fixture mounted with no error fallback in Chromium. Individual interactions, external media and application integration remain separately unverified.",
+      "featured": true,
+      "useCases": [
+        "web-deck"
+      ],
+      "motionCost": "low",
+      "mountEvidence": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace/actions/runs/43761497671"
+    }
+  ]
+}

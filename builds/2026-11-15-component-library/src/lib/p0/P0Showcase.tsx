@@ -26,7 +26,7 @@ export function P0Showcase() {
         onAdd={() => setTasks((current) => [...current,{id:"new-"+current.length,title:"New priority task",completed:false,priority:"low" as const}])}/>
       <div style={{display:"grid",gap:18}}>
         <P0MetricCard label="Campaign reach" value={2480000} trend={{value:18.6,direction:"up",positiveWhen:"up",comparison:"vs previous period"}} period="Last 30 days" note="Demo values" />
-        <P0MetricCard label="Cost per acquisition" value={415.5} prefix="৳" trend={{value:8.2,direction:"down",positiveWhen:"down",comparison:"vs previous period"}} />
+        <P0MetricCard label="Cost per acquisition" value={415.5} prefix="BDT " trend={{value:8.2,direction:"down",positiveWhen:"down",comparison:"vs previous period"}} />
         <div style={{padding:22,borderRadius:16,background:"#fff",border:"1px solid #e4e9e9"}}>
           <P0ProgressMeter label="Creative approvals" value={7} max={10}/>
           <P0ProgressMeter label="Campaign readiness" value={92} max={100}/>

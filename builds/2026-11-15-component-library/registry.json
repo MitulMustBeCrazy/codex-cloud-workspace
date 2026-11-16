@@ -1,0 +1,2229 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "personal-component-library",
+  "homepage": "https://github.com/MitulMustBeCrazy/codex-cloud-workspace",
+  "items": [
+    {
+      "name": "pcl-workflow-logic",
+      "title": "Calendar, mentions and workflow logic",
+      "description": "Pure date-safe calendar, mention and data logic, independent of React.",
+      "type": "registry:lib",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/system/workflow-logic.js",
+          "type": "registry:lib",
+          "target": "src/lib/system/workflow-logic.js"
+        }
+      ]
+    },
+    {
+      "name": "pcl-visual-logic",
+      "title": "Word clouds and motion logic",
+      "description": "Deterministic nonoverlap word cloud placement and named motion profiles.",
+      "type": "registry:lib",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/system/visual-logic.js",
+          "type": "registry:lib",
+          "target": "src/lib/system/visual-logic.js"
+        }
+      ]
+    },
+    {
+      "name": "pcl-media-coordinator",
+      "title": "Single-active-media coordinator",
+      "description": "Independent coordination of multiple HTML audio/video players.",
+      "type": "registry:lib",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/system/media-coordinator.js",
+          "type": "registry:lib",
+          "target": "src/lib/system/media-coordinator.js"
+        }
+      ]
+    },
+    {
+      "name": "pcl-today-task-card",
+      "title": "Today task card",
+      "description": "Reusable task completion, delegation and promotion controls with external callbacks.",
+      "type": "registry:component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/p0/TodayTaskCard.tsx",
+          "type": "registry:component",
+          "target": "src/lib/p0/TodayTaskCard.tsx"
+        },
+        {
+          "path": "src/lib/p0/p0.css",
+          "type": "registry:component",
+          "target": "src/lib/p0/p0.css"
+        }
+      ]
+    },
+    {
+      "name": "pcl-kpi-card",
+      "title": "KPI and progress",
+      "description": "Locale-aware metrics and accessible target progress meter.",
+      "type": "registry:component",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/p0/MetricCard.tsx",
+          "type": "registry:component",
+          "target": "src/lib/p0/MetricCard.tsx"
+        },
+        {
+          "path": "src/lib/p0/p0.css",
+          "type": "registry:component",
+          "target": "src/lib/p0/p0.css"
+        }
+      ]
+    },
+    {
+      "name": "pcl-brandaily-workflows",
+      "title": "Brandaily workflow components",
+      "description": "Five-view calendar, inline tagging, campaign approvals, communications and data table.",
+      "type": "registry:block",
+      "registryDependencies": [
+        "pcl-workflow-logic",
+        "pcl-today-task-card",
+        "pcl-kpi-card"
+      ],
+      "files": [
+        {
+          "path": "src/lib/workflows/BrandailyWorkbench.tsx",
+          "type": "registry:component",
+          "target": "src/lib/workflows/BrandailyWorkbench.tsx"
+        },
+        {
+          "path": "src/lib/workflows/brandaily.css",
+          "type": "registry:component",
+          "target": "src/lib/workflows/brandaily.css"
+        }
+      ]
+    },
+    {
+      "name": "pcl-deck-presentation",
+      "title": "Web deck components",
+      "description": "Slide-safe 16:9 frames, media, word clouds, comparisons, roadmap and reveals.",
+      "type": "registry:block",
+      "registryDependencies": [
+        "pcl-visual-logic",
+        "pcl-media-coordinator"
+      ],
+      "files": [
+        {
+          "path": "src/lib/presentation/PresentationWorkbench.tsx",
+          "type": "registry:component",
+          "target": "src/lib/presentation/PresentationWorkbench.tsx"
+        },
+        {
+          "path": "src/lib/presentation/presentation.css",
+          "type": "registry:component",
+          "target": "src/lib/presentation/presentation.css"
+        }
+      ]
+    },
+    {
+      "name": "pcl-advanced-studio",
+      "title": "P1 and P2 advanced components",
+      "description": "Command palette, saved filters, notifications, visual effects and advanced analytics.",
+      "type": "registry:block",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/advanced/AdvancedWorkbench.tsx",
+          "type": "registry:component",
+          "target": "src/lib/advanced/AdvancedWorkbench.tsx"
+        },
+        {
+          "path": "src/lib/advanced/advanced.css",
+          "type": "registry:component",
+          "target": "src/lib/advanced/advanced.css"
+        }
+      ]
+    },
+    {
+      "name": "pcl-html-deck-core",
+      "title": "Standalone HTML deck engine",
+      "description": "Shared keyboard, timed reveal, responsive and reduced-motion CSS/JS engine.",
+      "type": "registry:block",
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "templates/pitch-inspired/deck-core.css",
+          "type": "registry:component",
+          "target": "templates/pitch-inspired/deck-core.css"
+        },
+        {
+          "path": "templates/pitch-inspired/deck-core.js",
+          "type": "registry:lib",
+          "target": "templates/pitch-inspired/deck-core.js"
+        }
+      ]
+    },
+    {
+      "name": "pcl-html-deck-examples",
+      "title": "Original HTML deck examples",
+      "description": "Editable Pitch-inspired HTML deck narratives with additional animated reveals.",
+      "type": "registry:block",
+      "registryDependencies": [
+        "pcl-html-deck-core"
+      ],
+      "files": [
+        {
+          "path": "templates/pitch-inspired/editorial.html",
+          "type": "registry:component",
+          "target": "templates/pitch-inspired/editorial.html"
+        },
+        {
+          "path": "templates/pitch-inspired/board-report.html",
+          "type": "registry:component",
+          "target": "templates/pitch-inspired/board-report.html"
+        },
+        {
+          "path": "templates/pitch-inspired/kpi-report.html",
+          "type": "registry:component",
+          "target": "templates/pitch-inspired/kpi-report.html"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-account-menu",
+      "title": "MotionBrew AccountMenu",
+      "description": "A profile pill that morphs into a full account card.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/account-menu.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/account-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-action-menu",
+      "title": "MotionBrew ActionMenu",
+      "description": "A dropdown of actions and links with a crafted feel.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/action-menu.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/action-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-activity-grid",
+      "title": "MotionBrew ActivityGrid",
+      "description": "A white card with a year of daily activity as a heatmap: one column per week, one square per day, in tints and shades of one colour, dark ink by default: light on quiet days, deep on the busiest.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/activity-grid.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/activity-grid.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-add-card",
+      "title": "MotionBrew AddCard",
+      "description": "An empty state for payments: a white card that asks for a first payment card.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/add-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/add-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-amount-slider",
+      "title": "MotionBrew AmountSlider",
+      "description": "A white card for picking an amount.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/amount-slider.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/amount-slider.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-annotation-text",
+      "title": "MotionBrew AnnotationText",
+      "description": "Hand-drawn pen marks draw themselves around words when they scroll into view: an underline, a circle, a box or a strike-through, each with a slightly wobbly stroke so it reads as drawn, not ruled.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/annotation-text.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/annotation-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-aura-card",
+      "title": "MotionBrew AuraCard",
+      "description": "A feature card on a live two colour gradient: a main pool flows in the lower left and a second colour drifts in from the lower right, blending into it under a moving film grain (on the colour only) while the top stays clear for the title and copy.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/aura-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/aura-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-auth-card",
+      "title": "MotionBrew AuthCard",
+      "description": "One white card for signing in and signing up.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/auth-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/auth-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-avatar-testimonial",
+      "title": "MotionBrew AvatarTestimonial",
+      "description": "A testimonial card driven by a row of avatars.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/avatar-testimonial.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/avatar-testimonial.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-backspace-text",
+      "title": "MotionBrew BackspaceText",
+      "description": "Types a word, holds, backspaces it letter by letter and types the next, on a loop, with a blinking caret.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/backspace-text.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/backspace-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-bell-toggle",
+      "title": "MotionBrew BellToggle",
+      "description": "A pill toggle for notifications.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/bell-toggle.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/bell-toggle.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-bill-list",
+      "title": "MotionBrew BillList",
+      "description": "A white card of upcoming bills and subscriptions.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/bill-list.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/bill-list.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-binary-text",
+      "title": "MotionBrew BinaryText",
+      "description": "The text scrambles into 0s and 1s, then decodes left to right back into the real characters.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/binary-text.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/binary-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-blur-accordion",
+      "title": "MotionBrew BlurAccordion",
+      "description": "An accordion whose panels open on a spring and smear with a vertical motion blur while they move.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/blur-accordion.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/blur-accordion.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-blur-text",
+      "title": "MotionBrew BlurText",
+      "description": "Words (or letters) rise out of a blur one after another as the text scrolls into view, settling sharp and in place.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/blur-text.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/blur-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-booking-card",
+      "title": "MotionBrew BookingCard",
+      "description": "A white booking card for a trial class, a demo call or any slot someone reserves.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/booking-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/booking-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-brand-bridge",
+      "title": "MotionBrew BrandBridge",
+      "description": "A feature card for any site or app.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/brand-bridge.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/brand-bridge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-calendar-agenda",
+      "title": "MotionBrew CalendarAgenda",
+      "description": "A day planner card: a week strip on top and the chosen day's events below, each with its time, length and a colored bar.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/calendar-agenda.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/calendar-agenda.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-channel-mix",
+      "title": "MotionBrew ChannelMix",
+      "description": "A white marketing card: a light gray header with an icon tile, a title and a line of copy, then a white panel that overlaps it with the week's sessions on rolling digits and a row of slim ticks that splits them by channel.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/channel-mix.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/channel-mix.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-column-card",
+      "title": "MotionBrew ColumnCard",
+      "description": "A tall white card with a small live pill, a headline, a short line of body text and a few big rounded columns standing in a soft gray stage over faint guide lines, each carrying its value inside at the top, with a dot legend and the total in a footer.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/column-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/column-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-contact-card",
+      "title": "MotionBrew ContactCard",
+      "description": "A Contact link that lives inside a sentence (\"Not just a simple Contact button.\"), set in the sentence's own size, weight and colour with just an arrow after it.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/contact-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/contact-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-context-menu",
+      "title": "MotionBrew ContextMenu",
+      "description": "Wraps any content and opens a white menu at the pointer when it is right clicked, springing out of that corner while its rows rise in.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/context-menu.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/context-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-contour-feature-card",
+      "title": "MotionBrew ContourFeatureCard",
+      "description": "A product feature card: a browser window with a small dashboard rises in front of a live topographic map.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/contour-feature-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/contour-feature-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-contour-lines",
+      "title": "MotionBrew ContourLines",
+      "description": "A background of live topographic contour lines.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/contour-lines.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/contour-lines.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-decay-card",
+      "title": "MotionBrew DecayCard",
+      "description": "A full-bleed image card with its text laid over the picture.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/decay-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/decay-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-deploy-streak",
+      "title": "MotionBrew DeployStreak",
+      "description": "A white card for a team's shipping streak: a title with an animated flame, a big count of days in a row with a deploy and a grid of dots, one per day.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/deploy-streak.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/deploy-streak.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-depth-carousel",
+      "title": "MotionBrew DepthCarousel",
+      "description": "A stack of cards receding into depth along a diagonal, each turned a little toward the viewer.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/depth-carousel.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/depth-carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-device-traffic",
+      "title": "MotionBrew DeviceTraffic",
+      "description": "A white traffic card: a light gray header with an icon tile, a title and a line of copy, then a white panel that overlaps it with the total visitors on rolling digits and a column per device.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/device-traffic.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/device-traffic.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-download-button",
+      "title": "MotionBrew DownloadButton",
+      "description": "An ink pill that shows a download from start to finish.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/download-button.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/download-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-duo-flip",
+      "title": "MotionBrew DuoFlip",
+      "description": "A gallery that turns its pictures over with a liquid fold.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/duo-flip.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/duo-flip.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-event-card",
+      "title": "MotionBrew EventCard",
+      "description": "A minimal white card with the details of one event: a small kind line over the title, then the date and a time whose clock hands sweep round to the start when the card comes into view.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/event-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/event-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-file-drop",
+      "title": "MotionBrew FileDrop",
+      "description": "A white upload card with a drag and drop zone.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/file-drop.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/file-drop.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-flip-words",
+      "title": "MotionBrew FlipWords",
+      "description": "One word in a sentence flips to the next on a loop.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/flip-words.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/flip-words.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-flux-card",
+      "title": "MotionBrew FluxCard",
+      "description": "A feature card on a pixelated gradient.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/flux-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/flux-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-fuse-button",
+      "title": "MotionBrew FuseButton",
+      "description": "An action button whose done state carries an undo on a burning fuse.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/fuse-button.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/fuse-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-globe-card",
+      "title": "MotionBrew GlobeCard",
+      "description": "A feature card, for a team or about page or anywhere else, with a dotted 3D globe rising from its bottom edge over a soft colored glow.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "three"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/globe-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/globe-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-goal-gauge",
+      "title": "MotionBrew GoalGauge",
+      "description": "A half-ring goal meter split by source.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/goal-gauge.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/goal-gauge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-gradient-card",
+      "title": "MotionBrew GradientCard",
+      "description": "A metric card on a live mesh gradient.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/gradient-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/gradient-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-gradient-text",
+      "title": "MotionBrew GradientText",
+      "description": "A slow gradient flows through the letters on a seamless loop, clipped to the glyphs.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/gradient-text.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/gradient-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-gravity-tag-pile",
+      "title": "MotionBrew GravityTagPile",
+      "description": "Tags drop into the card, bounce, spin and pile up under real physics.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/gravity-tag-pile.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/gravity-tag-pile.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-growth-stream",
+      "title": "MotionBrew GrowthStream",
+      "description": "A total built up over time, drawn as nested bands that step wider before each checkpoint.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/growth-stream.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/growth-stream.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-highlight-text",
+      "title": "MotionBrew HighlightText",
+      "description": "A marker sweeps behind chosen phrases one after another as the paragraph scrolls into view, with a slight hand-held skew.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/highlight-text.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/highlight-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-hold-to-confirm",
+      "title": "MotionBrew HoldToConfirm",
+      "description": "A button you hold to confirm.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/hold-to-confirm.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/hold-to-confirm.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-infinite-gallery",
+      "title": "MotionBrew InfiniteGallery",
+      "description": "An endless wall of work you can move in any direction and never reach the edge of.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/infinite-gallery.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/infinite-gallery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-integration-hub",
+      "title": "MotionBrew IntegrationHub",
+      "description": "A ring of app tiles wired into one hub in the middle.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/integration-hub.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/integration-hub.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-liquid-card",
+      "title": "MotionBrew LiquidCard",
+      "description": "A tall card with a huge icon bleeding off its right edge, used as a glass container.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/liquid-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/liquid-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-liquid-metal-card",
+      "title": "MotionBrew LiquidMetalCard",
+      "description": "A white image card that melts into a second picture under a flood of black liquid metal.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/liquid-metal-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/liquid-metal-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-liquid-tabs",
+      "title": "MotionBrew LiquidTabs",
+      "description": "Icon tabs over a white panel, where the chosen tab is a white bump that grows out of the panel's top edge, joined to it by soft inward curves so the tab and the panel read as one piece.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/liquid-tabs.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/liquid-tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-magnetic-button",
+      "title": "MotionBrew MagneticButton",
+      "description": "A button that leans toward the cursor on a spring.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/magnetic-button.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/magnetic-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-magnetic-flow",
+      "title": "MotionBrew MagneticFlow",
+      "description": "A stack of cards that follows the leader like a snake, then bursts open like the sun.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/magnetic-flow.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/magnetic-flow.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-message-composer",
+      "title": "MotionBrew MessageComposer",
+      "description": "A white rich text composer for a chat or a comment thread.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/message-composer.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/message-composer.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-metal-card-stack",
+      "title": "MotionBrew MetalCardStack",
+      "description": "A stack of metal payment cards that feel like the real thing: brushed metal with a fine grain, bevelled edges that catch the light, a visible card edge underneath, an embossed number and a light sheen that slides across the surface as the front card tilts toward the pointer.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/metal-card-stack.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/metal-card-stack.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-metric-split",
+      "title": "MotionBrew MetricSplit",
+      "description": "A card that splits a total across three metrics: one rounded bar of proportional segments (solid, light, striped), with each metric's dot, label and odometer number under its segment.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/metric-split.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/metric-split.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-mix-chart",
+      "title": "MotionBrew MixChart",
+      "description": "A white chart card of stacked bars, each bar split into a few vivid segments with small gaps between them.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/mix-chart.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/mix-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-month-calendar",
+      "title": "MotionBrew MonthCalendar",
+      "description": "A white month calendar.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/month-calendar.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/month-calendar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-morph-search",
+      "title": "MotionBrew MorphSearch",
+      "description": "A search pill that turns into a white card on focus.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/morph-search.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/morph-search.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-orbit-card",
+      "title": "MotionBrew OrbitCard",
+      "description": "A feature card for a community, a network or a user count.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/orbit-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/orbit-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-otp-code",
+      "title": "MotionBrew OtpCode",
+      "description": "A white card that asks for a one time code sent to an email address or a phone.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/otp-code.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/otp-code.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-particle-card",
+      "title": "MotionBrew ParticleCard",
+      "description": "A product feature card whose hero visual is made of particles.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/particle-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/particle-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-payment-form",
+      "title": "MotionBrew PaymentForm",
+      "description": "A white card for adding a payment card.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/payment-form.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/payment-form.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-pill-tabs",
+      "title": "MotionBrew PillTabs",
+      "description": "Tabs on a tinted track with a white pill that slides to the active tab.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/pill-tabs.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/pill-tabs.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-pixel-blast",
+      "title": "MotionBrew PixelBlast",
+      "description": "A background of dithered pixel clouds.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/pixel-blast.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/pixel-blast.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-pixel-feature-card",
+      "title": "MotionBrew PixelFeatureCard",
+      "description": "A product feature card: a phone with a small app screen stands in front of a field of dithered pixel clouds.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/pixel-feature-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/pixel-feature-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-pixel-scroll",
+      "title": "MotionBrew PixelScroll",
+      "description": "A scroll-driven pixel transition.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/pixel-scroll.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/pixel-scroll.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-pricing-card",
+      "title": "MotionBrew PricingCard",
+      "description": "One plan as a white card resting in a soft grey shell, like a print in a mount, with a label strip along the top of the shell.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/pricing-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/pricing-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-prism-carousel",
+      "title": "MotionBrew PrismCarousel",
+      "description": "An endless loop of cards, images or metrics, circling slowly through a soft stage that fills its container, with a liquid glass lens at each edge.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/prism-carousel.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/prism-carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-prism-flow",
+      "title": "MotionBrew PrismFlow",
+      "description": "A dark background crossed by a soft band of light that bends and drifts like a ribbon caught in slow air.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/prism-flow.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/prism-flow.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-privacy-banner",
+      "title": "MotionBrew PrivacyBanner",
+      "description": "A white cookie consent card.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/privacy-banner.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/privacy-banner.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-profile-card",
+      "title": "MotionBrew ProfileCard",
+      "description": "A white profile card for a creator.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/profile-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/profile-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-profile-menu",
+      "title": "MotionBrew ProfileMenu",
+      "description": "A white profile menu card for a workspace app.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/profile-menu.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/profile-menu.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-project-index",
+      "title": "MotionBrew ProjectIndex",
+      "description": "An editorial project index: a numbered list of projects beside a large image panel.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/project-index.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/project-index.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-prompt-input",
+      "title": "MotionBrew PromptInput",
+      "description": "A white composer for an AI assistant.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/prompt-input.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/prompt-input.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-quota-gauge",
+      "title": "MotionBrew QuotaGauge",
+      "description": "A white card for a plan's credit quota: a three quarter gauge made of radial ticks, like a speedometer, around a bolt.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/quota-gauge.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/quota-gauge.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-range-chart",
+      "title": "MotionBrew RangeChart",
+      "description": "A white card that charts a range for each day, like heart rate: a pill from each day's low to high on a soft column track, separate bubbles for outlying readings, and a dashed average line.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/range-chart.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/range-chart.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-reaction-card",
+      "title": "MotionBrew ReactionCard",
+      "description": "A white post card with three reaction buttons, each with its own pop-up of choices in the spirit of a social feed.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/reaction-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/reaction-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-recap-card",
+      "title": "MotionBrew RecapCard",
+      "description": "A white summary card that reads like a sentence.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/recap-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/recap-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-receipt-button",
+      "title": "MotionBrew ReceiptButton",
+      "description": "A pay button that turns into a receipt printer.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/receipt-button.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/receipt-button.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-ribbon-gallery",
+      "title": "MotionBrew RibbonGallery",
+      "description": "An endless ribbon of cards wrapped on the inside of a curved screen and tilted across the frame, 20 degrees by default.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/ribbon-gallery.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/ribbon-gallery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-roadmap-card",
+      "title": "MotionBrew RoadmapCard",
+      "description": "A white card that walks through the phases of a product roadmap like stories.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/roadmap-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/roadmap-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-rolling-card-stack",
+      "title": "MotionBrew RollingCardStack",
+      "description": "A deck of metric cards that rolls forward like a rolodex.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/rolling-card-stack.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/rolling-card-stack.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-rolling-stepper",
+      "title": "MotionBrew RollingStepper",
+      "description": "A number stepper whose digits roll like an odometer.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/rolling-stepper.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/rolling-stepper.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-rotating-text",
+      "title": "MotionBrew RotatingText",
+      "description": "Text set on a circle spins slowly around a center badge.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/rotating-text.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/rotating-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-score-card",
+      "title": "MotionBrew ScoreCard",
+      "description": "A white chart card with a big score and a few pill bars.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/score-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/score-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-search-modal",
+      "title": "MotionBrew SearchModal",
+      "description": "A search field with a card that drops down once it is used.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/search-modal.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/search-modal.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-shimmer-text",
+      "title": "MotionBrew ShimmerText",
+      "description": "A bright band sweeps across muted text on a loop, the thinking sheen used for AI and loading states.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/shimmer-text.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/shimmer-text.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-sidebar-nav",
+      "title": "MotionBrew SidebarNav",
+      "description": "A white app sidebar that folds between a full rail of icons and labels and a slim rail of icons only.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/sidebar-nav.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/sidebar-nav.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-slide-commit",
+      "title": "MotionBrew SlideCommit",
+      "description": "A slide-to-confirm pill for actions worth a deliberate gesture: paying, sending, deleting.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/slide-commit.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/slide-commit.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-spatial-gallery",
+      "title": "MotionBrew SpatialGallery",
+      "description": "A WebGL media tunnel that turns a list of images and videos into an endless space you travel through.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/spatial-gallery.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/spatial-gallery.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-spending-meter",
+      "title": "MotionBrew SpendingMeter",
+      "description": "A spending card with a segmented bar.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/spending-meter.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/spending-meter.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-tab-bar",
+      "title": "MotionBrew TabBar",
+      "description": "A white, fully rounded mobile bottom navigation in three styles.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/tab-bar.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/tab-bar.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-team-member-card",
+      "title": "MotionBrew TeamMemberCard",
+      "description": "A white card for a person on the team.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/team-member-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/team-member-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-team-morph",
+      "title": "MotionBrew TeamMorph",
+      "description": "A presence pill that morphs into a team card.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/team-morph.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/team-morph.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-tilt-card",
+      "title": "MotionBrew TiltCard",
+      "description": "A card that tilts in 3D toward the cursor on a spring, lifts slightly, and catches a glare highlight that slides opposite the tilt.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/tilt-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/tilt-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-tilt-carousel",
+      "title": "MotionBrew TiltCarousel",
+      "description": "A row of photo cards that moves on by itself: the one in the middle faces you square on and every card beside it turns away in 3D, shrinking, dimming and softening a little more the further out it sits.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/tilt-carousel.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/tilt-carousel.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-toast-stack",
+      "title": "MotionBrew ToastStack",
+      "description": "Notifications gathered in a neat stack in the middle of their container instead of a screen corner.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/toast-stack.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/toast-stack.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-usage-ring",
+      "title": "MotionBrew UsageRing",
+      "description": "A white card for plan usage: a ring made of short segments around a big percent.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/usage-ring.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/usage-ring.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-verify-flow",
+      "title": "MotionBrew VerifyFlow",
+      "description": "A verification card in three stages: connect, check, verified.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/verify-flow.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/verify-flow.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-voice-prompt",
+      "title": "MotionBrew VoicePrompt",
+      "description": "A composer for an AI assistant that you can talk to.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion",
+        "gsap",
+        "@gsap/react"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/voice-prompt.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/voice-prompt.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-wallet-card",
+      "title": "MotionBrew WalletCard",
+      "description": "A balance card with a currency switch and quick actions.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/wallet-card.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/wallet-card.tsx"
+        }
+      ]
+    },
+    {
+      "name": "motionbrew-wave-text",
+      "title": "MotionBrew WaveText",
+      "description": "A heading whose words warp like liquid when you touch them.",
+      "type": "registry:component",
+      "dependencies": [
+        "clsx",
+        "tailwind-merge",
+        "lucide-react",
+        "motion"
+      ],
+      "registryDependencies": [],
+      "files": [
+        {
+          "path": "src/lib/motionbrew/components/wave-text.tsx",
+          "type": "registry:component",
+          "target": "components/motionbrew/wave-text.tsx"
+        }
+      ]
+    }
+  ]
+}

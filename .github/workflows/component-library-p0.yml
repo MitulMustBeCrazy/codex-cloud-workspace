@@ -1,14 +1,27 @@
-name: Component Library P0 QA
+name: Component Library P0-P4 QA
 on:
   push:
     branches:
       - prototype/personal-component-library
+      - feature/pcl-p0-p2-2026-11-15
+      - feature/pcl-motionbrew-100-2026-11-15
+      - feature/pcl-p4-release-hardening-2026-11-16
+    paths:
+      - 'builds/2026-11-15-component-library/**'
+      - '.github/workflows/component-library-p0.yml'
+  pull_request:
+    branches:
+      - prototype/personal-component-library
+      - feature/pcl-p0-p2-2026-11-15
+      - feature/pcl-gallery-and-reuse-2026-11-16
     paths:
       - 'builds/2026-11-15-component-library/**'
       - '.github/workflows/component-library-p0.yml'
   workflow_dispatch:
+permissions:
+  contents: write
 jobs:
-  p0:
+  verify:
     runs-on: ubuntu-latest
     defaults:
       run:
@@ -20,9 +33,56 @@ jobs:
         uses: actions/setup-node@v4
         with:
           node-version: '22'
-      - name: Install
+      - name: Install dependencies
         run: npm install --no-audit --no-fund
       - name: Build and typecheck
         run: npm run build
-      - name: Unit tests
+      - name: Verify packaged P4 release assets and provenance
+        run: npm run test:release
+      - name: Execute unit and source tests
         run: npm test
+      - name: Verify independent dashboard and presentation consumer bundles
+        run: npm run test:consumers
+      - name: Verify MotionBrew all-source registry output
+        run: |
+          test -f public/r/motionbrew-blur-text.json
+          test -f public/r/motionbrew-globe-card.json
+          test -f public/r/motionbrew-wave-text.json
+      - name: Verify generated decks
+        run: |
+          test -f public/decks/pitch-inspired/sonic-launch.html
+          test -f public/decks/pitch-inspired/editorial.html
+          test -f public/r/pcl-brandaily-workflows.json
+          test -f public/r/pcl-deck-presentation.json
+      - name: Install Chromium for browser QA
+        run: npx playwright install chromium
+      - name: Test browser interactions, responsive layouts and accessibility
+        run: npm run test:e2e
+      - name: Upload browser review screenshots
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: personal-component-library-browser-review
+          path: builds/2026-11-15-component-library/test-results/
+          if-no-files-found: ignore
+      - name: Upload isolated preview build
+        uses: actions/upload-artifact@v4
+        with:
+          name: personal-component-library-preview
+          path: builds/2026-11-15-component-library/dist/
+          if-no-files-found: error
+
+      - name: Publish isolated static preview branch
+        if: github.ref == 'refs/heads/feature/pcl-p0-p2-2026-11-15' && github.event_name == 'push'
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          cd dist
+          git init
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git config user.name "github-actions[bot]"
+          git checkout -B pcl-preview-static
+          git add -A
+          git commit -m "preview: P0-P2 build from ${GITHUB_SHA}"
+          git remote add origin "https://x-access-token:${GH_TOKEN}@github.com/${GITHUB_REPOSITORY}.git"
+          git push origin HEAD:refs/heads/pcl-preview-static --force
