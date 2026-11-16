@@ -30,7 +30,7 @@ try {
   return e(Card,{maxWidth:530,elevation:"low"},e(Stack,{gap:3,align:"start",padding:4},
    e(Heading,{level:2},"Actual Astryx components"),
    e(Text,null,"A published Card, Stack, Heading, Text and Button rendered inside an isolated live preview."),
-   e(Button,{variant:"primary",label:"Increment count",onPress:()=>setCount(c=>c+1),onClick:()=>setCount(c=>c+1)}),
+   e(Button,{variant:"primary",label:"Increment count",onClick:()=>setCount(c=>c+1)}),
    e(Text,null,"Interactions: "+count)));
  }
  createRoot(document.getElementById("root")).render(e(Demo));
