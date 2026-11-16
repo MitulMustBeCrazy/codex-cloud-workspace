@@ -21,6 +21,20 @@ test.describe("Design integration live controls",()=>{
   await specimen.getByRole("button",{name:"Increment count"}).click();
   await expect(specimen.getByText("Interactions: 1")).toBeVisible();
  });
+ test("updates real Astryx props and executable JSX in the browser",async({page})=>{
+  const lab=page.getByTestId("astryx-execution-lab");
+  await lab.getByLabel("Astryx button label").fill("Apply changes");
+  await lab.getByLabel("Astryx stack gap").selectOption("5");
+  await lab.getByLabel("Astryx card max width").selectOption("360");
+  await expect(lab.getByRole("button",{name:"Apply changes"})).toBeVisible();
+  await expect(lab.locator(".di-live-code")).toContainText("maxWidth={360}");
+  await expect(lab.locator(".di-live-code")).toContainText("gap={5}");
+  await lab.getByRole("button",{name:"Apply changes"}).click();
+  await expect(lab.getByText("Interactions: 1")).toBeVisible();
+  await lab.getByRole("button",{name:"Reset specimen"}).click();
+  await expect(lab.getByRole("button",{name:"Increment count"})).toBeVisible();
+  await expect(lab.getByText("Interactions: 0")).toBeVisible();
+ });
  test("runs QA checklist and changes style tokens",async({page})=>{
   await page.getByRole("button",{name:"Design QA"}).click();
   await expect(page.getByText("2 / 5")).toBeVisible();
