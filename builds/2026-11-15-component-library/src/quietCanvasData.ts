@@ -15,7 +15,7 @@ export const accentOptions: {id:Accent; label:string; hex:string}[] = [
  { id:"cobalt",label:"Cobalt",hex:"#315FAB" },
 ];
 
-export type SectionId = "overview"|"components"|"motionbrew"|"decks"|"styles"|"blueprints"|"references"|"p0"|"brandaily"|"presentation"|"lab";
+export type SectionId = "overview"|"components"|"motionbrew"|"decks"|"styles"|"blueprints"|"references"|"p0"|"brandaily"|"presentation"|"lab"|"design-integration";
 export type Section = {id:SectionId;name:string;group:"Discover"|"Collections"|"Studio";description:string};
 export const sections:Section[]=[
  {id:"overview",name:"Overview",group:"Discover",description:"Your workspace at a glance"},
@@ -29,6 +29,7 @@ export const sections:Section[]=[
  {id:"brandaily",name:"Brandaily P0",group:"Studio",description:"Working marketing workflow UI"},
  {id:"presentation",name:"Presentation P0",group:"Studio",description:"Motion and storytelling stages"},
  {id:"lab",name:"P1 + P2 Lab",group:"Studio",description:"Advanced charts and interactions"},
+ {id:"design-integration",name:"Design integration",group:"Studio",description:"Live controls, critique, style tokens and sources"},
 ];
 export const sectionForQuery=(query:string|null):SectionId=>sections.find(s=>s.id===query)?.id??"overview";
 

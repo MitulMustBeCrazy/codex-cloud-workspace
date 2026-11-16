@@ -7,6 +7,7 @@ import {BrandailyWorkbench} from "./lib/workflows/BrandailyWorkbench";
 import {PresentationWorkbench} from "./lib/presentation/PresentationWorkbench";
 import {AdvancedWorkbench} from "./lib/advanced/AdvancedWorkbench";
 import {MotionBrewGallery} from "./lib/motionbrew/MotionBrewGallery";
+import {DesignIntegrationWorkbench} from "./lib/design-integration/DesignIntegrationWorkbench";
 import {
  accentOptions,appearanceDefaults,deckUrl,htmlDeckTemplates,materialCounts,motionComponents,narrativeBlueprints,
  notionTracker,reactBitsReferences,registryUrl,sectionForQuery,sections,slideStyles,sourceRegistry,sourceRoot,validAppearance
@@ -307,6 +308,7 @@ function QuietCanvasPortal(){
      {section==="brandaily"&&<div className="qc-module-wrap qc-workbench-area"><BrandailyWorkbench/></div>}
      {section==="presentation"&&<div className="qc-module-wrap qc-workbench-area"><PresentationWorkbench/></div>}
      {section==="lab"&&<div className="qc-module-wrap qc-workbench-area"><AdvancedWorkbench/></div>}
+     {section==="design-integration"&&<div className="qc-module-wrap qc-workbench-area"><DesignIntegrationWorkbench/></div>}
      <footer className="qc-footer"><span>Quiet Canvas / A home for better building</span><span>{materialCounts.registry} source entries · {materialCounts.decks} decks · {materialCounts.references} references</span></footer>
     </main>
    </div>
