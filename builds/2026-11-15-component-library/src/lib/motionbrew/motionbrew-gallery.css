@@ -42,3 +42,13 @@
 @media(max-width:1040px){.mb-card-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
 @media(max-width:670px){.mb-card-grid{grid-template-columns:1fr}.mb-hero-count{display:none}.mb-hero{padding:0}.mb-inspector{padding:16px}.mb-live-stage{padding:15px;min-height:260px}.mb-inspector header>button{padding:9px 10px}}
 @media(prefers-reduced-motion:reduce){.mb-component-card{transition:none!important}.mb-component-card:hover{transform:none}}
+
+/* Readiness is a factual lifecycle state, not a decorative badge. */
+.mb-component-card__status{display:inline-block;font-size:10px;font-weight:650;letter-spacing:.01em;color:#47616b;background:#e9f0f1;border-radius:6px;padding:6px 8px;margin-bottom:10px}
+.mb-component-card__status[data-readiness="demo-verified"]{color:#245a49;background:#e5f2eb}
+.mb-component-card__status[data-readiness="consumer-verified"]{color:#1b5243;background:#daeee3}
+.mb-component-card__status[data-readiness="source-only"]{background:#eef0f1;color:#435862}
+.mb-card-info .mb-trigger{margin-bottom:10px}
+.mb-results{align-items:center}
+.mb-toolbar label{flex-basis:175px}
+.mb-toolbar .mb-search{flex-basis:280px}

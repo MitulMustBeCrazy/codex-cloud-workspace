@@ -38,3 +38,22 @@ Project root: builds/2026-11-15-component-library
 - src/lib/p0/: TodayTaskCard, MetricCard, ProgressMeter and P0Showcase.
 - templates/pitch-inspired/: original Editorial, Board Report, KPI Report mini-decks, deck-core.js/CSS and test harness.
 - .github/workflows/component-library-p0.yml: CI definition, status requires run verification.
+
+## Active A+B milestone (2026-11-16)
+- Combined gallery-first and reuse-first work has its own isolated GitHub branch: `feature/pcl-gallery-and-reuse-2026-11-16`.
+- Draft PR: https://github.com/MitulMustBeCrazy/codex-cloud-workspace/pull/4
+- Development preview project: https://pcl-gallery-reuse-review.pages.dev/ (verify hosting status before calling live).
+- Current canonical Quiet Canvas portal: https://pcl-component-library-review.pages.dev/ (unchanged until approved).
+- Source-truth preview readiness catalog: `src/lib/motionbrew/preview-catalog.json`; default all 100 are `source-only` until evidence supports promotion.
+- 16 selected registry imports are independently built in dashboard and deck consumer Vite roots; browser validation and full 100-preview fixture coverage remain open.
+- Full design and implementation plan: `docs/superpowers/specs/2026-11-16-gallery-and-reuse-design.md` and `docs/superpowers/plans/2026-11-16-gallery-and-reuse-implementation.md`.
+
+## P4 Release Hardening (2026-11-16)
+
+- Active P4 source branch: `feature/pcl-p4-release-hardening-2026-11-16` (draft [PR #5](https://github.com/MitulMustBeCrazy/codex-cloud-workspace/pull/5) targeting A+B development branch).
+- Dedicated isolated P4 Cloudflare review target: `https://pcl-p4-release-review.pages.dev/`; confirm deployment success and commit SHA before describing it as live.
+- Run `npm run build` to build registry, decks and two consumer bundles, then generate `dist/release-manifest.json` with **124** verified distribution routes.
+- Run `npm run test:release`, `npm test` and `npm run test:e2e`; Playwright uses the built Vite preview instead of HMR development mode.
+- Inspector must retain and restore keyboard focus; all component previews stay on-demand, reduced motion supported.
+- P4 release evidence, source-count truth and rollback: `docs/motionbrew/P4_RELEASE_CHECKLIST.md`.
+- Canonical live `https://pcl-component-library-review.pages.dev/` and Brandaily production remain untouched until explicit approval.
