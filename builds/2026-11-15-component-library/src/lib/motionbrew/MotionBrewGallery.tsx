@@ -1,4 +1,4 @@
-import React, { lazy, Suspense, useEffect, useMemo, useState } from "react";
+import React, { lazy, Suspense, useEffect, useMemo, useRef, useState } from "react";
 import type { ComponentType, ReactNode } from "react";
 import manifest from "./manifest.json";
 import previewCatalog from "./preview-catalog.json";
@@ -71,6 +71,9 @@ export function MotionBrewGallery({initialQuery=""}:{initialQuery?:string}) {
   const [featuredOnly, setFeaturedOnly] = useState(false);
   const [copied, setCopied] = useState("");
   const [favorites, setFavorites] = useState<Set<string>>(() => new Set());
+  const inspectorRef = useRef<HTMLElement | null>(null);
+  const returnFocusRef = useRef<HTMLButtonElement | null>(null);
+  const openInspector = (slug: string, trigger: HTMLButtonElement) => { returnFocusRef.current = trigger; setSelected(slug); };
 
   const matches = useMemo(() => manifest.components.filter(item => {
     const haystack = [item.name,item.slug,item.description,item.trigger,item.engine,item.category].join(" ").toLowerCase();
@@ -85,9 +88,39 @@ export function MotionBrewGallery({initialQuery=""}:{initialQuery?:string}) {
   const chosenReadiness=selected?bySlug.get(selected):null;
   useEffect(() => {
     if (!selected) return;
-    const key = (event: KeyboardEvent) => { if (event.key === "Escape") { setSelected(null); setEnabled(false); } };
+    const dialog = inspectorRef.current;
+    dialog?.focus({preventScroll:true});
+    const key = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        event.preventDefault();
+        setSelected(null);
+        setEnabled(false);
+        return;
+      }
+      if (event.key !== "Tab" || !dialog) return;
+      const controls = [...dialog.querySelectorAll<HTMLElement>(
+        'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), textarea:not([disabled]), [tabindex]:not([tabindex="-1"])'
+      )].filter(element => element.getClientRects().length > 0);
+      if (!controls.length) { event.preventDefault(); dialog.focus(); return; }
+      const first = controls[0];
+      const last = controls[controls.length-1];
+      const current = document.activeElement;
+      if (event.shiftKey && (current === first || current === dialog)) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && (current === last || current === dialog)) {
+        event.preventDefault();
+        first.focus();
+      } else if (current && !dialog.contains(current)) {
+        event.preventDefault();
+        first.focus();
+      }
+    };
     document.addEventListener("keydown", key);
-    return () => document.removeEventListener("keydown", key);
+    return () => {
+      document.removeEventListener("keydown", key);
+      returnFocusRef.current?.focus({preventScroll:true});
+    };
   }, [selected]);
   useEffect(() => {setEnabled(false);},[selected]);
 
@@ -113,16 +146,16 @@ export function MotionBrewGallery({initialQuery=""}:{initialQuery?:string}) {
     <div className="mb-results"><span>{matches.length} components</span><span>Full source imported · activate previews individually to conserve performance</span></div>
     <div className="mb-card-grid">
       {matches.map(item=><article className="mb-component-card" key={item.slug}>
-        <button className="mb-component-card__main" type="button" onClick={()=>setSelected(item.slug)}>
+        <button className="mb-component-card__main" type="button" onClick={event=>openInspector(item.slug,event.currentTarget)}>
           <div className="mb-card-art"><span>{item.category}</span><strong>{item.name.replace(/([a-z])([A-Z])/g,"$1 $2")}</strong><i>{item.engine}</i></div>
           <div className="mb-card-info"><span className="mb-component-card__status" data-readiness={bySlug.get(item.slug)?.status||"source-only"}>{readinessLabels[bySlug.get(item.slug)?.status||"source-only"]}</span><span className="mb-trigger">{item.trigger}</span><h3>{item.name}</h3><p>{item.description}</p></div>
         </button>
-        <div className="mb-card-bottom"><code>{item.slug}</code><button type="button" onClick={()=>setSelected(item.slug)}>Inspect</button></div>
+        <div className="mb-card-bottom"><code>{item.slug}</code><button type="button" onClick={event=>openInspector(item.slug,event.currentTarget)}>Inspect</button></div>
       </article>)}
     </div>
     {matches.length===0&&<p className="mb-empty">No components match the current filters.</p>}
-    {chosen&&<div className="mb-inspector-backdrop" role="presentation" onMouseDown={event=>{if(event.target===event.currentTarget)setSelected(null)}}>
-      <section className="mb-inspector" role="dialog" aria-modal="true" aria-label={"Inspect "+chosen.name}>
+    {chosen&&<div className="mb-inspector-backdrop" role="presentation" onMouseDown={event=>{if(event.target===event.currentTarget){setSelected(null);setEnabled(false)}}}>
+      <section ref={inspectorRef} tabIndex={-1} className="mb-inspector" role="dialog" aria-modal="true" aria-label={"Inspect "+chosen.name}>
         <header><div><span className="mb-kicker">{chosen.category} / {chosen.engine}</span><h2>{chosen.name}</h2><p>{chosen.description}</p></div><button type="button" onClick={()=>setSelected(null)} aria-label="Close MotionBrew inspector">Close</button></header>
         <div className="mb-inspector-tags"><span>{chosen.trigger}</span><span>{chosen.engine}</span><span>{chosen.slug}</span><span>{readinessLabels[chosenReadiness?.status||"source-only"]}</span></div>
         <div className="mb-live-stage">

@@ -1,10 +1,11 @@
-name: Component Library P0-P2 QA
+name: Component Library P0-P4 QA
 on:
   push:
     branches:
       - prototype/personal-component-library
       - feature/pcl-p0-p2-2026-11-15
       - feature/pcl-motionbrew-100-2026-11-15
+      - feature/pcl-p4-release-hardening-2026-11-16
     paths:
       - 'builds/2026-11-15-component-library/**'
       - '.github/workflows/component-library-p0.yml'
@@ -12,6 +13,7 @@ on:
     branches:
       - prototype/personal-component-library
       - feature/pcl-p0-p2-2026-11-15
+      - feature/pcl-gallery-and-reuse-2026-11-16
     paths:
       - 'builds/2026-11-15-component-library/**'
       - '.github/workflows/component-library-p0.yml'
@@ -35,6 +37,8 @@ jobs:
         run: npm install --no-audit --no-fund
       - name: Build and typecheck
         run: npm run build
+      - name: Verify packaged P4 release assets and provenance
+        run: npm run test:release
       - name: Execute unit and source tests
         run: npm test
       - name: Verify independent dashboard and presentation consumer bundles
