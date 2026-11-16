@@ -2,3 +2,16 @@
 .di-upstream{margin-top:18px}.di-upstream>.di-panel-meta a{display:inline-flex;align-items:center;gap:6px;font-size:12px;color:#b42e3c}.di-upstream>p{max-width:850px}.di-upstream iframe{display:block;border:1px solid #e5e1dc;border-radius:13px;background:#f7f6f4;width:100%;min-height:430px;margin-top:18px}
 
 .di-astryx-specimen{background:#f6f6f4;padding:24px;border:1px solid #e8e5e2;border-radius:13px;margin-top:18px;color:#292929;overflow:auto}.di-astryx-specimen button{cursor:pointer}
+
+/* Real Astryx package workbench. Keep style scoped to the Design Integration view. */
+.di-runtime-lab{margin-top:18px}
+.di-runtime-controls{display:grid;grid-template-columns:repeat(3,minmax(0,1fr)) auto;gap:12px;padding:16px;border:1px solid #e9e4df;border-radius:13px;background:#fbfaf8}
+.di-runtime-controls label{display:flex;flex-direction:column;gap:8px;font-size:12px;font-weight:700;color:#4b5053;min-width:0}
+.di-runtime-controls input,.di-runtime-controls select{min-width:0;width:100%;padding:10px 12px;border:1px solid #d8d5d1;border-radius:9px;background:#fff;color:#303438;font:inherit;font-size:13px}
+.di-runtime-controls>button{align-self:end;white-space:nowrap}
+.di-live-code-head{display:flex;align-items:center;justify-content:space-between;gap:12px;margin:16px 0 8px}
+.di-live-code-head strong{font-size:13px}
+.di-live-code{font:12px/1.65 ui-monospace,SFMono-Regular,Consolas,monospace;white-space:pre;overflow:auto;max-height:270px;border:1px solid #e6e2dc;border-radius:11px;padding:15px;background:#24292e;color:#f4f3f0;margin:0}
+.di-runtime-lab>.di-notice{margin-top:10px;line-height:1.5}
+@media(max-width:1024px){.di-runtime-controls{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:540px){.di-runtime-controls{grid-template-columns:1fr;padding:12px}.di-live-code{font-size:10px}.di-live-code-head{align-items:flex-start}}
