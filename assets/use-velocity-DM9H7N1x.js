@@ -1,0 +1,1 @@
+import{u}from"./use-motion-value-event-1I3hgR24.js";import{u as a}from"./use-motion-value-B07xKEAp.js";import{f as i}from"./frame-B8r6sQRK.js";function f(t){const e=a(t.getVelocity()),o=()=>{const s=t.getVelocity();e.set(s),s&&i.update(o)};return u(t,"change",()=>{i.update(o,!1,!0)}),e}export{f as u};

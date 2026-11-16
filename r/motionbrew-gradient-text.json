@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "motionbrew-gradient-text",
+  "type": "registry:component",
+  "title": "MotionBrew GradientText",
+  "description": "A slow gradient flows through the letters on a seamless loop, clipped to the glyphs.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/motionbrew/components/gradient-text.tsx",
+      "type": "registry:component",
+      "target": "components/motionbrew/gradient-text.tsx",
+      "content": "\"use client\";\n\n/**\n * GradientText, from https://motion-brew.com/components/gradient-text\n *\n * One self contained file: the component and the cn()\n * helper. Needs React 18 or 19 and Tailwind CSS v4.\n */\n\nimport * as React from \"react\";\nimport { type ClassValue, clsx } from \"clsx\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport { twMerge } from \"tailwind-merge\";\n\n// cn(): merges Tailwind classes, later ones win.\n/** Merge Tailwind classes, letting later classes win conflicts. */\nfunction cn(...inputs: ClassValue[]): string {\n  return twMerge(clsx(inputs));\n}\n\n// GradientText\n\n/**\n * GradientText\n *\n * Trigger: timeline. A slow gradient flows through the letters on a seamless\n * loop, clipped to the glyphs. The text stays real, selectable text. Reduced\n * motion holds the gradient still.\n *\n * Engine: motion/react (a looping background-position animation on clipped text).\n */\n\nexport interface GradientTextProps {\n  /** The text. Default `\"Color in motion\"`. */\n  text?: string;\n  /** Element to render. Default `\"h2\"`. */\n  as?: \"h1\" | \"h2\" | \"h3\" | \"p\" | \"span\";\n  /** Gradient stops; the first repeats at the end so the loop is seamless. Default violet, pink, amber. */\n  colors?: string[];\n  /** Seconds per full loop. Default `6`. */\n  speed?: number;\n  className?: string;\n}\n\nexport const GradientText = React.forwardRef<HTMLElement, GradientTextProps>(function GradientText(\n  { text = \"Color in motion\", as = \"h2\", colors = [\"#8b5cf6\", \"#d6498f\", \"#f59e0b\"], speed = 6, className },\n  ref,\n) {\n  const still = useReducedMotion();\n  const Tag = motion[as];\n  const stops = [...colors, colors[0]].join(\", \");\n  return (\n    <Tag\n      ref={ref as React.Ref<never>}\n      className={cn(\"bg-clip-text text-transparent\", className)}\n      style={{ backgroundImage: `linear-gradient(90deg, ${stops})`, backgroundSize: \"200% 100%\" }}\n      animate={still ? undefined : { backgroundPosition: [\"0% 50%\", \"-200% 50%\"] }}\n      transition={{ duration: speed, ease: \"linear\", repeat: Infinity }}\n    >\n      {text}\n    </Tag>\n  );\n});"
+    }
+  ]
+}

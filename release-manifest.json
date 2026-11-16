@@ -1,0 +1,25 @@
+{
+  "schemaVersion": 1,
+  "project": "personal-component-library",
+  "releaseTrack": "isolated-review",
+  "sourceCommit": "e9579eba1e382014f4157774d32a252df2855fa4",
+  "inventory": {
+    "registryEntries": 110,
+    "motionbrewEntries": 100,
+    "htmlDecks": 10,
+    "independentConsumers": 2
+  },
+  "readiness": {
+    "source-only": 0,
+    "fixture-ready": 100,
+    "demo-verified": 0,
+    "consumer-verified": 0
+  },
+  "checks": {
+    "valid": true,
+    "requiredRoutes": 124,
+    "errors": []
+  },
+  "certification": "Source and preview integrity only; per-component interaction certification is separate.",
+  "generatedAt": "2026-11-16T01:04:13.209Z"
+}

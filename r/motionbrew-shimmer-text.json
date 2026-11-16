@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "motionbrew-shimmer-text",
+  "type": "registry:component",
+  "title": "MotionBrew ShimmerText",
+  "description": "A bright band sweeps across muted text on a loop, the thinking sheen used for AI and loading states.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/motionbrew/components/shimmer-text.tsx",
+      "type": "registry:component",
+      "target": "components/motionbrew/shimmer-text.tsx",
+      "content": "\"use client\";\n\n/**\n * ShimmerText, from https://motion-brew.com/components/shimmer-text\n *\n * One self contained file: the component and the cn()\n * helper. Needs React 18 or 19 and Tailwind CSS v4.\n */\n\nimport * as React from \"react\";\nimport { type ClassValue, clsx } from \"clsx\";\nimport { motion, useReducedMotion } from \"motion/react\";\nimport { twMerge } from \"tailwind-merge\";\n\n// cn(): merges Tailwind classes, later ones win.\n/** Merge Tailwind classes, letting later classes win conflicts. */\nfunction cn(...inputs: ClassValue[]): string {\n  return twMerge(clsx(inputs));\n}\n\n// ShimmerText\n\n/**\n * ShimmerText\n *\n * Trigger: timeline. A bright band sweeps across muted text on a loop, the\n * \"thinking\" sheen used for AI and loading states. The text stays real. Reduced\n * motion shows it plain.\n *\n * Engine: motion/react (a looping background-position sweep on clipped text).\n */\n\nexport interface ShimmerTextProps {\n  /** The text. Default `\"Thinking…\"`. */\n  text?: string;\n  /** Element to render. Default `\"span\"`. */\n  as?: \"p\" | \"span\" | \"h3\";\n  /** Seconds per sweep. Default `1.8`. */\n  duration?: number;\n  /** Width of the bright band, as a percent of the text. Default `14`. */\n  spread?: number;\n  className?: string;\n}\n\nexport const ShimmerText = React.forwardRef<HTMLElement, ShimmerTextProps>(function ShimmerText(\n  { text = \"Thinking…\", as = \"span\", duration = 1.8, spread = 14, className },\n  ref,\n) {\n  const still = useReducedMotion();\n  const Tag = motion[as];\n  const a = 50 - spread / 2;\n  const b = 50 + spread / 2;\n  return (\n    <Tag\n      ref={ref as React.Ref<never>}\n      className={cn(\n        \"inline-block bg-clip-text text-transparent [--shimmer-base:#a1a1aa] [--shimmer-shine:#18181b] dark:[--shimmer-base:#71717a] dark:[--shimmer-shine:#fafafa]\",\n        still && \"text-zinc-500\",\n        className,\n      )}\n      style={\n        still\n          ? undefined\n          : {\n              backgroundImage: `linear-gradient(90deg, var(--shimmer-base) 0%, var(--shimmer-base) ${a}%, var(--shimmer-shine) 50%, var(--shimmer-base) ${b}%, var(--shimmer-base) 100%)`,\n              backgroundSize: \"250% 100%\",\n            }\n      }\n      animate={still ? undefined : { backgroundPosition: [\"100% 0%\", \"-50% 0%\"] }}\n      transition={{ duration, ease: \"linear\", repeat: Infinity }}\n    >\n      {text}\n    </Tag>\n  );\n});"
+    }
+  ]
+}

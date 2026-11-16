@@ -1,0 +1,1 @@
+import{r}from"./index-CKnOrWSY.js";import{M as a}from"./MotionConfigContext-CO7zWqzP.js";import{f as u,c}from"./frame-B8r6sQRK.js";function x(e){const t=r.useRef(0),{isStatic:i}=r.useContext(a);r.useEffect(()=>{if(i)return;const n=({timestamp:o,delta:s})=>{t.current||(t.current=o),e(o-t.current,s)};return u.update(n,!0),()=>c(n)},[e])}export{x as u};

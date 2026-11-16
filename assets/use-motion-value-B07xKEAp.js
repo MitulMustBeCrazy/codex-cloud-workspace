@@ -1,0 +1,1 @@
+import{r as t}from"./index-CKnOrWSY.js";import{M as r}from"./MotionConfigContext-CO7zWqzP.js";import{u as a}from"./use-constant-CCrssuVT.js";import{f as u}from"./is-svg-element-CbmmBUOb.js";function p(o){const e=a(()=>u(o)),{isStatic:s}=t.useContext(r);if(s){const[,n]=t.useState(o);t.useEffect(()=>e.on("change",n),[])}return e}export{p as u};

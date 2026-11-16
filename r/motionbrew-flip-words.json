@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "motionbrew-flip-words",
+  "type": "registry:component",
+  "title": "MotionBrew FlipWords",
+  "description": "One word in a sentence flips to the next on a loop.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/motionbrew/components/flip-words.tsx",
+      "type": "registry:component",
+      "target": "components/motionbrew/flip-words.tsx",
+      "content": "\"use client\";\n\n/**\n * FlipWords, from https://motion-brew.com/components/flip-words\n *\n * One self contained file: the component and the cn()\n * helper. Needs React 18 or 19 and Tailwind CSS v4.\n */\n\nimport * as React from \"react\";\nimport { type ClassValue, clsx } from \"clsx\";\nimport { AnimatePresence, motion, useReducedMotion } from \"motion/react\";\nimport { twMerge } from \"tailwind-merge\";\n\n// cn(): merges Tailwind classes, later ones win.\n/** Merge Tailwind classes, letting later classes win conflicts. */\nfunction cn(...inputs: ClassValue[]): string {\n  return twMerge(clsx(inputs));\n}\n\n// FlipWords\n\n/**\n * FlipWords\n *\n * Trigger: timeline. One word in a sentence flips to the next on a loop. The\n * outgoing word tips away while the incoming one flips up letter by letter in\n * 3D, and the sentence reflows smoothly as the word's width changes. Screen\n * readers hear the whole list once. Reduced motion swaps words without motion.\n *\n * Engine: motion/react (AnimatePresence with per-letter stagger, layout on the\n * word slot for the width change).\n */\n\nexport interface FlipWordsProps {\n  /** Text before the changing word. Default `\"Build\"`. */\n  before?: string;\n  /** Words to cycle through. Default `[\"playful\", \"precise\", \"fearless\"]`. */\n  words?: string[];\n  /** Text after the changing word. Default `\"interfaces\"`. */\n  after?: string;\n  /** Milliseconds each word stays. Default `2400`. */\n  interval?: number;\n  /** Classes for the changing word. Default a violet tone. */\n  wordClassName?: string;\n  className?: string;\n}\n\nconst EASE = [0.22, 1, 0.36, 1] as const;\n\nexport const FlipWords = React.forwardRef<HTMLParagraphElement, FlipWordsProps>(function FlipWords(\n  {\n    before = \"Build\",\n    words = [\"playful\", \"precise\", \"fearless\"],\n    after = \"interfaces\",\n    interval = 2400,\n    wordClassName = \"text-violet-600 dark:text-violet-400\",\n    className,\n  },\n  ref,\n) {\n  const still = useReducedMotion();\n  const [index, setIndex] = React.useState(0);\n  React.useEffect(() => {\n    if (words.length < 2) return;\n    const id = window.setInterval(() => setIndex((i) => (i + 1) % words.length), interval);\n    return () => window.clearInterval(id);\n  }, [words.length, interval]);\n  const word = words[index] ?? \"\";\n\n  return (\n    <p ref={ref} className={cn(\"text-balance\", className)}>\n      <span className=\"sr-only\">\n        {before} {words.join(\", \")} {after}\n      </span>\n      <span aria-hidden>\n        {before}{\" \"}\n        <motion.span layout={!still} transition={{ duration: 0.4, ease: EASE }} className=\"relative inline-flex\" style={{ perspective: 600 }}>\n          <AnimatePresence mode=\"popLayout\" initial={false}>\n            <motion.span\n              key={word}\n              className={cn(\"inline-flex whitespace-pre\", wordClassName)}\n              exit={still ? { opacity: 0 } : { opacity: 0, y: \"-0.4em\", rotateX: 70, filter: \"blur(6px)\" }}\n              transition={{ duration: 0.3, ease: EASE }}\n            >\n              {Array.from(word).map((ch, i) => (\n                <motion.span\n                  key={i}\n                  className=\"inline-block\"\n                  style={{ transformOrigin: \"50% 100%\" }}\n                  initial={still ? false : { opacity: 0, y: \"0.4em\", rotateX: -80, filter: \"blur(6px)\" }}\n                  animate={{ opacity: 1, y: 0, rotateX: 0, filter: \"blur(0px)\" }}\n                  transition={{ duration: 0.45, ease: EASE, delay: i * 0.03 }}\n                >\n                  {ch}\n                </motion.span>\n              ))}\n            </motion.span>\n          </AnimatePresence>\n        </motion.span>{\" \"}\n        {after}\n      </span>\n    </p>\n  );\n});"
+    }
+  ]
+}

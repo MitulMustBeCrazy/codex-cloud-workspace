@@ -1,0 +1,17 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "pcl-media-coordinator",
+  "type": "registry:lib",
+  "title": "Single-active-media coordinator",
+  "description": "Independent coordination of multiple HTML audio/video players.",
+  "dependencies": [],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/system/media-coordinator.js",
+      "type": "registry:lib",
+      "target": "src/lib/system/media-coordinator.js",
+      "content": "/** One playing media item per presentation, without global document listeners. */\nexport function createMediaCoordinator() {\n  const players = new Map();\n  let current = null;\n  return {\n    register(id, pause) {\n      if(!id || typeof pause !== \"function\")throw new Error(\"Invalid media registration\");\n      const token=Symbol(id);\n      players.set(id,{pause,token});\n      return () => { if(players.get(id)?.token===token){players.delete(id);if(current===id)current=null;} };\n    },\n    activate(id) {\n      if(!players.has(id))return false;\n      if(current && current!==id)players.get(current)?.pause();\n      current=id;return true;\n    },\n    deactivate(id) {if(current===id)current=null;},\n    activeId() {return current;},\n    reset() {for(const handler of players.values())handler.pause();players.clear();current=null;}\n  };\n}\nexport const mediaCoordinator = createMediaCoordinator();\n"
+    }
+  ]
+}

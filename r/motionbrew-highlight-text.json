@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "motionbrew-highlight-text",
+  "type": "registry:component",
+  "title": "MotionBrew HighlightText",
+  "description": "A marker sweeps behind chosen phrases one after another as the paragraph scrolls into view, with a slight hand-held skew.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/motionbrew/components/highlight-text.tsx",
+      "type": "registry:component",
+      "target": "components/motionbrew/highlight-text.tsx",
+      "content": "\"use client\";\n\n/**\n * HighlightText, from https://motion-brew.com/components/highlight-text\n *\n * One self contained file: the component and the cn()\n * helper. Needs React 18 or 19 and Tailwind CSS v4.\n */\n\nimport * as React from \"react\";\nimport { type ClassValue, clsx } from \"clsx\";\nimport { motion, useInView, useReducedMotion } from \"motion/react\";\nimport { twMerge } from \"tailwind-merge\";\n\n// cn(): merges Tailwind classes, later ones win.\n/** Merge Tailwind classes, letting later classes win conflicts. */\nfunction cn(...inputs: ClassValue[]): string {\n  return twMerge(clsx(inputs));\n}\n\n// HighlightText\n\n/**\n * HighlightText\n *\n * Trigger: in view. A marker sweeps behind chosen phrases one after another as\n * the paragraph scrolls into view, with a slight hand-held skew. The text stays\n * plain and readable. Reduced motion shows the highlights already drawn.\n *\n * Engine: motion/react (useInView plus a staggered scaleX sweep behind each phrase).\n */\n\nexport interface HighlightTextProps {\n  /** The paragraph. Default a short line about motion. */\n  text?: string;\n  /** Phrases to highlight, in reading order. Each must appear in `text`. */\n  highlights?: string[];\n  /** Marker color. Default a soft yellow. */\n  color?: string;\n  /** Seconds each sweep takes. Default `0.6`. */\n  duration?: number;\n  className?: string;\n}\n\nexport const HighlightText = React.forwardRef<HTMLParagraphElement, HighlightTextProps>(function HighlightText(\n  {\n    text = \"Good motion is quiet. It guides the eye, explains what changed and gets out of the way.\",\n    highlights = [\"guides the eye\", \"explains what changed\"],\n    color = \"rgba(250, 204, 21, 0.45)\",\n    duration = 0.6,\n    className,\n  },\n  forwardedRef,\n) {\n  const ref = React.useRef<HTMLParagraphElement>(null);\n  React.useImperativeHandle(forwardedRef, () => ref.current as HTMLParagraphElement);\n  const inView = useInView(ref, { once: true, amount: 0.5 });\n  const still = useReducedMotion();\n\n  // Split the text into plain runs and highlighted phrases, in order.\n  const parts: { text: string; mark: number | null }[] = [];\n  let rest = text;\n  highlights.forEach((phrase, k) => {\n    const at = rest.indexOf(phrase);\n    if (at < 0) return;\n    if (at > 0) parts.push({ text: rest.slice(0, at), mark: null });\n    parts.push({ text: phrase, mark: k });\n    rest = rest.slice(at + phrase.length);\n  });\n  if (rest) parts.push({ text: rest, mark: null });\n\n  return (\n    <p ref={ref} className={cn(\"text-balance\", className)}>\n      {parts.map((part, i) =>\n        part.mark === null ? (\n          <React.Fragment key={i}>{part.text}</React.Fragment>\n        ) : (\n          <mark key={i} className=\"relative isolate whitespace-nowrap bg-transparent text-inherit\">\n            <motion.span\n              aria-hidden\n              className=\"absolute -inset-x-[0.12em] bottom-[0.08em] top-[0.18em] -z-10 origin-left rounded-[0.15em]\"\n              style={{ background: color, skewX: -8 }}\n              initial={still ? false : { scaleX: 0 }}\n              animate={inView ? { scaleX: 1 } : undefined}\n              transition={{ duration, ease: [0.65, 0, 0.35, 1], delay: 0.2 + part.mark * (duration + 0.15) }}\n            />\n            <span className=\"relative\">{part.text}</span>\n          </mark>\n        ),\n      )}\n    </p>\n  );\n});"
+    }
+  ]
+}

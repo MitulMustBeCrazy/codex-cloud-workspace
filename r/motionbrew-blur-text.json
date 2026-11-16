@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "motionbrew-blur-text",
+  "type": "registry:component",
+  "title": "MotionBrew BlurText",
+  "description": "Words (or letters) rise out of a blur one after another as the text scrolls into view, settling sharp and in place.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/motionbrew/components/blur-text.tsx",
+      "type": "registry:component",
+      "target": "components/motionbrew/blur-text.tsx",
+      "content": "\"use client\";\n\n/**\n * BlurText, from https://motion-brew.com/components/blur-text\n *\n * One self contained file: the component and the cn()\n * helper. Needs React 18 or 19 and Tailwind CSS v4.\n */\n\nimport * as React from \"react\";\nimport { type ClassValue, clsx } from \"clsx\";\nimport { motion, useInView, useReducedMotion } from \"motion/react\";\nimport { twMerge } from \"tailwind-merge\";\n\n// cn(): merges Tailwind classes, later ones win.\n/** Merge Tailwind classes, letting later classes win conflicts. */\nfunction cn(...inputs: ClassValue[]): string {\n  return twMerge(clsx(inputs));\n}\n\n// BlurText\n\n/**\n * BlurText\n *\n * Trigger: in view (or on mount). Words (or letters) rise out of a blur one\n * after another when the text scrolls into view, settling sharp and in place. Screen readers\n * get the plain sentence once. Reduced motion shows the text at once.\n *\n * Engine: motion/react (useInView plus staggered variants on transform, opacity\n * and filter).\n */\n\nexport interface BlurTextProps {\n  /** The text to reveal. Default `\"Every word drifts out of the blur and settles into sharp focus\"`. */\n  text?: string;\n  /** Element to render. Default `\"p\"`. */\n  as?: \"h1\" | \"h2\" | \"h3\" | \"p\" | \"span\";\n  /** Animate each `\"word\"` or each `\"letter\"`. Default `\"word\"`. */\n  by?: \"word\" | \"letter\";\n  /** Seconds between pieces. Default `0.08`. */\n  stagger?: number;\n  /** Seconds each piece takes. Default `0.7`. */\n  duration?: number;\n  /** Starting blur, px. Default `12`. */\n  blur?: number;\n  /** Pieces rise `\"up\"` or drop `\"down\"` into place. Default `\"up\"`. */\n  direction?: \"up\" | \"down\";\n  /** Seconds to wait before starting. Default `0`. */\n  delay?: number;\n  /** Start when it scrolls into view (`\"inView\"`) or right away (`\"mount\"`). Default `\"inView\"`. */\n  trigger?: \"inView\" | \"mount\";\n  className?: string;\n}\n\nexport const BlurText = React.forwardRef<HTMLElement, BlurTextProps>(function BlurText(\n  {\n    text = \"Every word drifts out of the blur and settles into sharp focus\",\n    as: Tag = \"p\",\n    by = \"word\",\n    stagger = 0.08,\n    duration = 0.7,\n    blur = 12,\n    direction = \"up\",\n    delay = 0,\n    trigger = \"inView\",\n    className,\n  },\n  forwardedRef,\n) {\n  const ref = React.useRef<HTMLElement>(null);\n  React.useImperativeHandle(forwardedRef, () => ref.current as HTMLElement);\n  const seen = useInView(ref, { once: true, amount: 0.4 });\n  const inView = trigger === \"mount\" || seen;\n  const still = useReducedMotion();\n  const pieces = by === \"word\" ? text.split(\" \") : Array.from(text);\n  const offset = direction === \"up\" ? \"0.35em\" : \"-0.35em\";\n\n  return (\n    <Tag ref={ref as React.Ref<never>} aria-label={text} className={cn(\"text-balance\", className)}>\n      {pieces.map((piece, i) => (\n        <React.Fragment key={i}>\n          <motion.span\n            aria-hidden\n            className=\"inline-block whitespace-pre will-change-transform\"\n            initial={still ? false : { opacity: 0, y: offset, filter: `blur(${blur}px)` }}\n            animate={inView ? { opacity: 1, y: 0, filter: \"blur(0px)\" } : undefined}\n            transition={{ duration, ease: [0.22, 1, 0.36, 1], delay: delay + i * stagger }}\n          >\n            {piece}\n          </motion.span>\n          {by === \"word\" && i < pieces.length - 1 && \" \"}\n        </React.Fragment>\n      ))}\n    </Tag>\n  );\n});"
+    }
+  ]
+}

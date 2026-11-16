@@ -1,0 +1,22 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry-item.json",
+  "name": "motionbrew-binary-text",
+  "type": "registry:component",
+  "title": "MotionBrew BinaryText",
+  "description": "The text scrambles into 0s and 1s, then decodes left to right back into the real characters.",
+  "dependencies": [
+    "clsx",
+    "tailwind-merge",
+    "lucide-react",
+    "motion"
+  ],
+  "registryDependencies": [],
+  "files": [
+    {
+      "path": "src/lib/motionbrew/components/binary-text.tsx",
+      "type": "registry:component",
+      "target": "components/motionbrew/binary-text.tsx",
+      "content": "\"use client\";\n\n/**\n * BinaryText, from https://motion-brew.com/components/binary-text\n *\n * One self contained file: the component and the cn()\n * helper. Needs React 18 or 19 and Tailwind CSS v4.\n */\n\nimport * as React from \"react\";\nimport { type ClassValue, clsx } from \"clsx\";\nimport { animate, type AnimationPlaybackControls, useInView, useReducedMotion } from \"motion/react\";\nimport { twMerge } from \"tailwind-merge\";\n\n// cn(): merges Tailwind classes, later ones win.\n/** Merge Tailwind classes, letting later classes win conflicts. */\nfunction cn(...inputs: ClassValue[]): string {\n  return twMerge(clsx(inputs));\n}\n\n// BinaryText\n\n/**\n * BinaryText\n *\n * Trigger: hover (and in view). The text scrambles into 0s and 1s, then decodes\n * left to right back into the real characters. It plays when it first scrolls\n * into view and again on every hover or focus. A monospace face keeps widths\n * steady while it churns. Screen readers only ever get the real text.\n *\n * Engine: motion/react (one animated progress value drives the decode; letters\n * left of it are settled, the rest flicker).\n */\n\nexport interface BinaryTextProps {\n  /** The text to decode. Default `\"Access granted\"`. */\n  text?: string;\n  /** Seconds for the full decode. Default `1.1`. */\n  duration?: number;\n  /** Characters used while scrambling. Default `\"01\"`. */\n  charset?: string;\n  /** Element to render. Default `\"p\"`. */\n  as?: \"h1\" | \"h2\" | \"h3\" | \"p\" | \"span\";\n  className?: string;\n}\n\nexport const BinaryText = React.forwardRef<HTMLElement, BinaryTextProps>(function BinaryText(\n  { text = \"Access granted\", duration = 1.1, charset = \"01\", as: Tag = \"p\", className },\n  forwardedRef,\n) {\n  const ref = React.useRef<HTMLElement>(null);\n  React.useImperativeHandle(forwardedRef, () => ref.current as HTMLElement);\n  const inView = useInView(ref, { once: true, amount: 0.6 });\n  const still = useReducedMotion();\n  const [shown, setShown] = React.useState(text);\n  const run = React.useRef<AnimationPlaybackControls | null>(null);\n\n  const play = React.useCallback(() => {\n    if (still) return;\n    run.current?.stop();\n    const chars = Array.from(text);\n    run.current = animate(0, chars.length, {\n      duration,\n      ease: \"linear\",\n      onUpdate: (p) => {\n        setShown(\n          chars\n            .map((ch, i) =>\n              ch === \" \" || i < Math.floor(p) ? ch : charset[Math.floor(Math.random() * charset.length)]!,\n            )\n            .join(\"\"),\n        );\n      },\n      onComplete: () => setShown(text),\n    });\n  }, [text, duration, charset, still]);\n\n  React.useEffect(() => {\n    if (inView) play();\n  }, [inView, play]);\n  React.useEffect(() => () => run.current?.stop(), []);\n\n  return (\n    <Tag\n      ref={ref as React.Ref<never>}\n      aria-label={text}\n      tabIndex={0}\n      onPointerEnter={play}\n      onFocus={play}\n      className={cn(\"cursor-default whitespace-pre font-mono tabular-nums outline-none\", className)}\n    >\n      <span aria-hidden>{shown}</span>\n    </Tag>\n  );\n});"
+    }
+  ]
+}
