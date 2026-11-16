@@ -28,7 +28,7 @@ const recipes=[
 function AstryxLiveSpecimen(){
  const [count,setCount]=useState(0);
  const [label,setLabel]=useState("Increment count");
- const [gap,setGap]=useState(3);
+ const [gap,setGap]=useState<2|3|5>(3);
  const [cardWidth,setCardWidth]=useState(530);
  const [copyNotice,setCopyNotice]=useState("");
  const safeLabel=label.trim()||"Increment count";
@@ -50,7 +50,7 @@ function AstryxLiveSpecimen(){
  return <div className="di-runtime-lab" data-testid="astryx-execution-lab">
   <div className="di-runtime-controls" aria-label="Astryx live prop controls">
    <label>Button label<input aria-label="Astryx button label" value={label} maxLength={48} onChange={e=>setLabel(e.target.value)}/></label>
-   <label>Stack gap<select aria-label="Astryx stack gap" value={gap} onChange={e=>setGap(Number(e.target.value))}><option value={2}>2 · Compact</option><option value={3}>3 · Default</option><option value={5}>5 · Airy</option></select></label>
+   <label>Stack gap<select aria-label="Astryx stack gap" value={gap} onChange={e=>setGap(Number(e.target.value) as 2|3|5)}><option value={2}>2 · Compact</option><option value={3}>3 · Default</option><option value={5}>5 · Airy</option></select></label>
    <label>Card max width<select aria-label="Astryx card max width" value={cardWidth} onChange={e=>setCardWidth(Number(e.target.value))}><option value={360}>360px</option><option value={530}>530px</option></select></label>
    <button className="di-secondary" type="button" onClick={reset}>Reset specimen</button>
   </div>
